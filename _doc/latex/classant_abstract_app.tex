@@ -1,0 +1,203 @@
+\hypertarget{classant_abstract_app}{\section{ant\+Abstract\+App Class Reference}
+\label{classant_abstract_app}\index{ant\+Abstract\+App@{ant\+Abstract\+App}}
+}
+
+
+abstract class for app definition  
+
+
+
+
+{\ttfamily \#include $<$ant\+Abstract\+App.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classant_abstract_app_a5567c6adff87b08cb794565804325f6c}{$\sim$ant\+Abstract\+App} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classant_abstract_app_a2e728002d7448d86eb81e2ffb272553e}{start} ()=0
+\begin{DoxyCompactList}\small\item\em start app virtual method to init the app \end{DoxyCompactList}\item 
+virtual void \hyperlink{classant_abstract_app_a19289810f175a2e19b90536a2a13a96e}{update} ()=0
+\begin{DoxyCompactList}\small\item\em update app virtual method to update app attributes \end{DoxyCompactList}\item 
+virtual void \hyperlink{classant_abstract_app_a52845a13d22bfc7ba426bc87c0f25cb5}{draw} ()=0
+\begin{DoxyCompactList}\small\item\em draw virtual method to render the app \end{DoxyCompactList}\item 
+virtual void \hyperlink{classant_abstract_app_ad27fa9b917e951470b6989ab015268c3}{shutdown} ()=0
+\begin{DoxyCompactList}\small\item\em shutdown virtual method to clean the app \end{DoxyCompactList}\item 
+double \hyperlink{classant_abstract_app_a0e7d74272d53e847e5fa6acc3d399e16}{get\+Current\+Time} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classant_abstract_app_ac1cbc2a3609ae4cde6ed6fc41af85d96}{ant\+Abstract\+App} (int window\+\_\+width, int window\+\_\+height, const std\+::string \&window\+\_\+title)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{classant_abstract_app_a8fc3c5dcc8feb8ed8039afe41b1c63eb}{run} ()
+\begin{DoxyCompactList}\small\item\em run the app \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ant\+Window\+Sh\+Ptr \hyperlink{classant_abstract_app_a2da8dc7071eb8f76ffe3fae6329439b2}{m\+\_\+window\+\_\+shptr}
+\item 
+double \hyperlink{classant_abstract_app_a3dd118d6793e653f1207abc4b498608d}{m\+\_\+mouse\+\_\+x\+\_\+pos}
+\item 
+double \hyperlink{classant_abstract_app_a44c5d57e580b3e68d076f638aa866bef}{m\+\_\+mouse\+\_\+y\+\_\+pos}
+\item 
+int \hyperlink{classant_abstract_app_a3346b67b4fe4b9627d9dbb064a08669b}{m\+\_\+frame\+\_\+count}
+\item 
+int \hyperlink{classant_abstract_app_a9d6e7846652cca2333831a19b1a4dad8}{m\+\_\+fps}
+\item 
+double \hyperlink{classant_abstract_app_a477dd78269fac0a6c2b20aa7fac41426}{m\+\_\+time}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classant_abstract_app_a205cc1e54945a8d88b270b0394958b3e}{update\+F\+P\+S\+Counter} ()
+\begin{DoxyCompactList}\small\item\em update frame attributes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+abstract class for app definition 
+
+class \hyperlink{classant_abstract_app}{ant\+Abstract\+App} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classant_abstract_app_a5567c6adff87b08cb794565804325f6c}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!````~ant\+Abstract\+App@{$\sim$ant\+Abstract\+App}}
+\index{````~ant\+Abstract\+App@{$\sim$ant\+Abstract\+App}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{$\sim$ant\+Abstract\+App}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Abstract\+App\+::$\sim$ant\+Abstract\+App (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classant_abstract_app_a5567c6adff87b08cb794565804325f6c}
+
+
+destructor 
+
+$\sim$ant\+Abstract\+App \hypertarget{classant_abstract_app_ac1cbc2a3609ae4cde6ed6fc41af85d96}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\index{ant\+Abstract\+App@{ant\+Abstract\+App}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{ant\+Abstract\+App}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Abstract\+App\+::ant\+Abstract\+App (
+\begin{DoxyParamCaption}
+\item[{int}]{window\+\_\+width, }
+\item[{int}]{window\+\_\+height, }
+\item[{const std\+::string \&}]{window\+\_\+title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classant_abstract_app_ac1cbc2a3609ae4cde6ed6fc41af85d96}
+
+
+constructor 
+
+\hyperlink{classant_abstract_app}{ant\+Abstract\+App} 
+\begin{DoxyParams}{Parameters}
+{\em window\+\_\+width} & window width \\
+\hline
+{\em window\+\_\+height} & window height \\
+\hline
+{\em window\+\_\+title} & window title \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classant_abstract_app_a52845a13d22bfc7ba426bc87c0f25cb5}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!draw@{draw}}
+\index{draw@{draw}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ant\+Abstract\+App\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classant_abstract_app_a52845a13d22bfc7ba426bc87c0f25cb5}
+
+
+draw virtual method to render the app 
+
+draw \hypertarget{classant_abstract_app_a0e7d74272d53e847e5fa6acc3d399e16}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!get\+Current\+Time@{get\+Current\+Time}}
+\index{get\+Current\+Time@{get\+Current\+Time}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{get\+Current\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double ant\+Abstract\+App\+::get\+Current\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classant_abstract_app_a0e7d74272d53e847e5fa6acc3d399e16}
+get\+Current\+Time \begin{DoxyReturn}{Returns}
+G\+L\+F\+W window time 
+\end{DoxyReturn}
+\hypertarget{classant_abstract_app_a8fc3c5dcc8feb8ed8039afe41b1c63eb}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!run@{run}}
+\index{run@{run}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void ant\+Abstract\+App\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classant_abstract_app_a8fc3c5dcc8feb8ed8039afe41b1c63eb}
+
+
+run the app 
+
+run \hypertarget{classant_abstract_app_ad27fa9b917e951470b6989ab015268c3}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ant\+Abstract\+App\+::shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classant_abstract_app_ad27fa9b917e951470b6989ab015268c3}
+
+
+shutdown virtual method to clean the app 
+
+shutdown \hypertarget{classant_abstract_app_a2e728002d7448d86eb81e2ffb272553e}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!start@{start}}
+\index{start@{start}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ant\+Abstract\+App\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classant_abstract_app_a2e728002d7448d86eb81e2ffb272553e}
+
+
+start app virtual method to init the app 
+
+start \hypertarget{classant_abstract_app_a19289810f175a2e19b90536a2a13a96e}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!update@{update}}
+\index{update@{update}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ant\+Abstract\+App\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classant_abstract_app_a19289810f175a2e19b90536a2a13a96e}
+
+
+update app virtual method to update app attributes 
+
+update \hypertarget{classant_abstract_app_a205cc1e54945a8d88b270b0394958b3e}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!update\+F\+P\+S\+Counter@{update\+F\+P\+S\+Counter}}
+\index{update\+F\+P\+S\+Counter@{update\+F\+P\+S\+Counter}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{update\+F\+P\+S\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}int ant\+Abstract\+App\+::update\+F\+P\+S\+Counter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_abstract_app_a205cc1e54945a8d88b270b0394958b3e}
+
+
+update frame attributes 
+
+update\+F\+P\+S\+Counter \begin{DoxyReturn}{Returns}
+current frame count 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classant_abstract_app_a9d6e7846652cca2333831a19b1a4dad8}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!m\+\_\+fps@{m\+\_\+fps}}
+\index{m\+\_\+fps@{m\+\_\+fps}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{m\+\_\+fps}]{\setlength{\rightskip}{0pt plus 5cm}int ant\+Abstract\+App\+::m\+\_\+fps\hspace{0.3cm}{\ttfamily [protected]}}}\label{classant_abstract_app_a9d6e7846652cca2333831a19b1a4dad8}
+current frame per seconds \hypertarget{classant_abstract_app_a3346b67b4fe4b9627d9dbb064a08669b}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!m\+\_\+frame\+\_\+count@{m\+\_\+frame\+\_\+count}}
+\index{m\+\_\+frame\+\_\+count@{m\+\_\+frame\+\_\+count}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{m\+\_\+frame\+\_\+count}]{\setlength{\rightskip}{0pt plus 5cm}int ant\+Abstract\+App\+::m\+\_\+frame\+\_\+count\hspace{0.3cm}{\ttfamily [protected]}}}\label{classant_abstract_app_a3346b67b4fe4b9627d9dbb064a08669b}
+current frame count \hypertarget{classant_abstract_app_a3dd118d6793e653f1207abc4b498608d}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!m\+\_\+mouse\+\_\+x\+\_\+pos@{m\+\_\+mouse\+\_\+x\+\_\+pos}}
+\index{m\+\_\+mouse\+\_\+x\+\_\+pos@{m\+\_\+mouse\+\_\+x\+\_\+pos}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{m\+\_\+mouse\+\_\+x\+\_\+pos}]{\setlength{\rightskip}{0pt plus 5cm}double ant\+Abstract\+App\+::m\+\_\+mouse\+\_\+x\+\_\+pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{classant_abstract_app_a3dd118d6793e653f1207abc4b498608d}
+current mouse x position \hypertarget{classant_abstract_app_a44c5d57e580b3e68d076f638aa866bef}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!m\+\_\+mouse\+\_\+y\+\_\+pos@{m\+\_\+mouse\+\_\+y\+\_\+pos}}
+\index{m\+\_\+mouse\+\_\+y\+\_\+pos@{m\+\_\+mouse\+\_\+y\+\_\+pos}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{m\+\_\+mouse\+\_\+y\+\_\+pos}]{\setlength{\rightskip}{0pt plus 5cm}double ant\+Abstract\+App\+::m\+\_\+mouse\+\_\+y\+\_\+pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{classant_abstract_app_a44c5d57e580b3e68d076f638aa866bef}
+current mouse y position \hypertarget{classant_abstract_app_a477dd78269fac0a6c2b20aa7fac41426}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!m\+\_\+time@{m\+\_\+time}}
+\index{m\+\_\+time@{m\+\_\+time}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{m\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}double ant\+Abstract\+App\+::m\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}}\label{classant_abstract_app_a477dd78269fac0a6c2b20aa7fac41426}
+current time in seconds, updated each 0.\+25s \hypertarget{classant_abstract_app_a2da8dc7071eb8f76ffe3fae6329439b2}{\index{ant\+Abstract\+App@{ant\+Abstract\+App}!m\+\_\+window\+\_\+shptr@{m\+\_\+window\+\_\+shptr}}
+\index{m\+\_\+window\+\_\+shptr@{m\+\_\+window\+\_\+shptr}!ant\+Abstract\+App@{ant\+Abstract\+App}}
+\subsubsection[{m\+\_\+window\+\_\+shptr}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Window\+Sh\+Ptr ant\+Abstract\+App\+::m\+\_\+window\+\_\+shptr\hspace{0.3cm}{\ttfamily [protected]}}}\label{classant_abstract_app_a2da8dc7071eb8f76ffe3fae6329439b2}
+window 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anthonycouret/\+Developer/ant\+\_\+graphics/ant\+\_\+graphics/include/app/abstract/ant\+Abstract\+App.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+_build
+_models
+_probes
+_shaders
+_tests
+_textures
+_unused_include
+_unused_src
+externals/hdr_gpugems3_chap20
+
+syntax: glob
+*.DS_STORE

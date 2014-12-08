@@ -1,0 +1,143 @@
+\hypertarget{classant_vbo}{\section{ant\+Vbo Class Reference}
+\label{classant_vbo}\index{ant\+Vbo@{ant\+Vbo}}
+}
+
+
+vertex array object  
+
+
+
+
+{\ttfamily \#include $<$ant\+Vbo.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classant_vbo_abf307882f88ca5d1215c9e281e9e36de}{$\sim$ant\+Vbo} ()
+\item 
+G\+Luint \hyperlink{classant_vbo_afecdb59e8844479186c1d4f0753252df}{get} (int index=0) const 
+\item 
+void \hyperlink{classant_vbo_a6348372fe04cc909b526cc40166e1544}{bind} (int index)
+\item 
+void \hyperlink{classant_vbo_aef854ede5ec02a59bfa1bea378e36e49}{set\+Data} (G\+Lsizeiptr size, const G\+Lvoid $\ast$data, G\+Lenum usage)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static ant\+Vbo\+Sh\+Ptr \hyperlink{classant_vbo_a2bae5b06d160917e4db3761e738f8d96}{create} (int n=1, G\+Lenum target=G\+L\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+B\+U\+F\+F\+E\+R)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classant_vbo_a18c59e211890a63677ab263ee8cf2888}{{\bfseries ant\+Vbo} (int n, G\+Lenum target)}\label{classant_vbo_a18c59e211890a63677ab263ee8cf2888}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classant_vbo_aa470c365da54128248ff3cf82a13bb1d}{m\+\_\+n}
+\item 
+G\+Luint $\ast$ \hyperlink{classant_vbo_ad9d6ae592ea4f03caf48fd98ce5660c0}{m\+\_\+id}
+\item 
+\hypertarget{classant_vbo_a9f22d5a5783c19697a7d0d4a78bfe1f0}{G\+Lenum {\bfseries m\+\_\+target}}\label{classant_vbo_a9f22d5a5783c19697a7d0d4a78bfe1f0}
+
+\item 
+\hypertarget{classant_vbo_a76be179a1c3212b5e88bdbc84aafd222}{ant\+Vbo\+Wk\+Ptr {\bfseries m\+\_\+weak\+\_\+ptr}}\label{classant_vbo_a76be179a1c3212b5e88bdbc84aafd222}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+vertex array object 
+
+class \hyperlink{classant_vao}{ant\+Vao} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classant_vbo_abf307882f88ca5d1215c9e281e9e36de}{\index{ant\+Vbo@{ant\+Vbo}!````~ant\+Vbo@{$\sim$ant\+Vbo}}
+\index{````~ant\+Vbo@{$\sim$ant\+Vbo}!ant\+Vbo@{ant\+Vbo}}
+\subsubsection[{$\sim$ant\+Vbo}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Vbo\+::$\sim$ant\+Vbo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classant_vbo_abf307882f88ca5d1215c9e281e9e36de}
+destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classant_vbo_a6348372fe04cc909b526cc40166e1544}{\index{ant\+Vbo@{ant\+Vbo}!bind@{bind}}
+\index{bind@{bind}!ant\+Vbo@{ant\+Vbo}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void ant\+Vbo\+::bind (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classant_vbo_a6348372fe04cc909b526cc40166e1544}
+bind
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & vbo index \\
+\hline
+\end{DoxyParams}
+\hypertarget{classant_vbo_a2bae5b06d160917e4db3761e738f8d96}{\index{ant\+Vbo@{ant\+Vbo}!create@{create}}
+\index{create@{create}!ant\+Vbo@{ant\+Vbo}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static ant\+Vbo\+Sh\+Ptr ant\+Vbo\+::create (
+\begin{DoxyParamCaption}
+\item[{int}]{n = {\ttfamily 1}, }
+\item[{G\+Lenum}]{target = {\ttfamily GL\+\_\+ARRAY\+\_\+BUFFER}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classant_vbo_a2bae5b06d160917e4db3761e738f8d96}
+static creation
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & number of vertex buffer objects \\
+\hline
+\end{DoxyParams}
+\hypertarget{classant_vbo_afecdb59e8844479186c1d4f0753252df}{\index{ant\+Vbo@{ant\+Vbo}!get@{get}}
+\index{get@{get}!ant\+Vbo@{ant\+Vbo}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint ant\+Vbo\+::get (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classant_vbo_afecdb59e8844479186c1d4f0753252df}
+get
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & vbo index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vbo id 
+\end{DoxyReturn}
+\hypertarget{classant_vbo_aef854ede5ec02a59bfa1bea378e36e49}{\index{ant\+Vbo@{ant\+Vbo}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!ant\+Vbo@{ant\+Vbo}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void ant\+Vbo\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{G\+Lsizeiptr}]{size, }
+\item[{const G\+Lvoid $\ast$}]{data, }
+\item[{G\+Lenum}]{usage}
+\end{DoxyParamCaption}
+)}}\label{classant_vbo_aef854ede5ec02a59bfa1bea378e36e49}
+set\+Data
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & buffer size \\
+\hline
+{\em data} & data pointer \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classant_vbo_ad9d6ae592ea4f03caf48fd98ce5660c0}{\index{ant\+Vbo@{ant\+Vbo}!m\+\_\+id@{m\+\_\+id}}
+\index{m\+\_\+id@{m\+\_\+id}!ant\+Vbo@{ant\+Vbo}}
+\subsubsection[{m\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint$\ast$ ant\+Vbo\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_vbo_ad9d6ae592ea4f03caf48fd98ce5660c0}
+vertex buffer objects ids pointer \hypertarget{classant_vbo_aa470c365da54128248ff3cf82a13bb1d}{\index{ant\+Vbo@{ant\+Vbo}!m\+\_\+n@{m\+\_\+n}}
+\index{m\+\_\+n@{m\+\_\+n}!ant\+Vbo@{ant\+Vbo}}
+\subsubsection[{m\+\_\+n}]{\setlength{\rightskip}{0pt plus 5cm}int ant\+Vbo\+::m\+\_\+n\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_vbo_aa470c365da54128248ff3cf82a13bb1d}
+number of vertex buffer objects 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anthonycouret/\+Developer/ant\+\_\+graphics/ant\+\_\+graphics/include/gl/ant\+Vbo.\+h\end{DoxyCompactItemize}

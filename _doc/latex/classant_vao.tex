@@ -1,0 +1,136 @@
+\hypertarget{classant_vao}{\section{ant\+Vao Class Reference}
+\label{classant_vao}\index{ant\+Vao@{ant\+Vao}}
+}
+
+
+vertex array object  
+
+
+
+
+{\ttfamily \#include $<$ant\+Vao.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \hyperlink{classant_vao_a5efa0defead323c3c9b1190dc5189aa5}{get} (int index=0) const 
+\item 
+void \hyperlink{classant_vao_a92bfa6b08372260e2e14dd9ab184f02f}{bind} (int index)
+\item 
+void \hyperlink{classant_vao_a9cf8c3b9de6c6e0f279c4e8933f9b74e}{attrib} (G\+Luint location, G\+Lint attribs\+\_\+size, G\+Lenum type, G\+Lboolean normalized, G\+Lsizei stride, const G\+Lvoid $\ast$pointer)
+\item 
+\hypertarget{classant_vao_ac8b6f2233f83ba83271f006f3b0be189}{void {\bfseries enable} (G\+Luint location)}\label{classant_vao_ac8b6f2233f83ba83271f006f3b0be189}
+
+\item 
+\hypertarget{classant_vao_a7b0fea83df63c01718d7f8cbe1cdf261}{void {\bfseries disable} (G\+Luint location)}\label{classant_vao_a7b0fea83df63c01718d7f8cbe1cdf261}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static ant\+Vao\+Sh\+Ptr \hyperlink{classant_vao_a7a2663eecd76da3414e347541a0dd7c7}{create} (int n=1)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classant_vao_aaf3959d8db304d527398936346f81567}{{\bfseries ant\+Vao} (int n)}\label{classant_vao_aaf3959d8db304d527398936346f81567}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classant_vao_a18263ffbcdd4251a7789d5049023d8f8}{m\+\_\+n}
+\item 
+G\+Luint $\ast$ \hyperlink{classant_vao_a9ddb4ce72bd223c7da3b826eb7ab4e01}{m\+\_\+id}
+\item 
+\hypertarget{classant_vao_aa5e459e6ee6cfd1e49a58027d501c5d1}{ant\+Vao\+Wk\+Ptr {\bfseries m\+\_\+weak\+\_\+ptr}}\label{classant_vao_aa5e459e6ee6cfd1e49a58027d501c5d1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+vertex array object 
+
+class \hyperlink{classant_vao}{ant\+Vao} 
+
+\subsection{Member Function Documentation}
+\hypertarget{classant_vao_a9cf8c3b9de6c6e0f279c4e8933f9b74e}{\index{ant\+Vao@{ant\+Vao}!attrib@{attrib}}
+\index{attrib@{attrib}!ant\+Vao@{ant\+Vao}}
+\subsubsection[{attrib}]{\setlength{\rightskip}{0pt plus 5cm}void ant\+Vao\+::attrib (
+\begin{DoxyParamCaption}
+\item[{G\+Luint}]{location, }
+\item[{G\+Lint}]{attribs\+\_\+size, }
+\item[{G\+Lenum}]{type, }
+\item[{G\+Lboolean}]{normalized, }
+\item[{G\+Lsizei}]{stride, }
+\item[{const G\+Lvoid $\ast$}]{pointer}
+\end{DoxyParamCaption}
+)}}\label{classant_vao_a9cf8c3b9de6c6e0f279c4e8933f9b74e}
+attrib
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & vao index \\
+\hline
+{\em size} & size ? !!! \\
+\hline
+\end{DoxyParams}
+\hypertarget{classant_vao_a92bfa6b08372260e2e14dd9ab184f02f}{\index{ant\+Vao@{ant\+Vao}!bind@{bind}}
+\index{bind@{bind}!ant\+Vao@{ant\+Vao}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void ant\+Vao\+::bind (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classant_vao_a92bfa6b08372260e2e14dd9ab184f02f}
+bind
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & vao index \\
+\hline
+\end{DoxyParams}
+\hypertarget{classant_vao_a7a2663eecd76da3414e347541a0dd7c7}{\index{ant\+Vao@{ant\+Vao}!create@{create}}
+\index{create@{create}!ant\+Vao@{ant\+Vao}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static ant\+Vao\+Sh\+Ptr ant\+Vao\+::create (
+\begin{DoxyParamCaption}
+\item[{int}]{n = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classant_vao_a7a2663eecd76da3414e347541a0dd7c7}
+static creation
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & number of vertex array objects \\
+\hline
+\end{DoxyParams}
+\hypertarget{classant_vao_a5efa0defead323c3c9b1190dc5189aa5}{\index{ant\+Vao@{ant\+Vao}!get@{get}}
+\index{get@{get}!ant\+Vao@{ant\+Vao}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint ant\+Vao\+::get (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classant_vao_a5efa0defead323c3c9b1190dc5189aa5}
+get
+
+
+\begin{DoxyParams}{Parameters}
+{\em vao} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vao id 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classant_vao_a9ddb4ce72bd223c7da3b826eb7ab4e01}{\index{ant\+Vao@{ant\+Vao}!m\+\_\+id@{m\+\_\+id}}
+\index{m\+\_\+id@{m\+\_\+id}!ant\+Vao@{ant\+Vao}}
+\subsubsection[{m\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint$\ast$ ant\+Vao\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_vao_a9ddb4ce72bd223c7da3b826eb7ab4e01}
+vertex array objects ids pointer \hypertarget{classant_vao_a18263ffbcdd4251a7789d5049023d8f8}{\index{ant\+Vao@{ant\+Vao}!m\+\_\+n@{m\+\_\+n}}
+\index{m\+\_\+n@{m\+\_\+n}!ant\+Vao@{ant\+Vao}}
+\subsubsection[{m\+\_\+n}]{\setlength{\rightskip}{0pt plus 5cm}int ant\+Vao\+::m\+\_\+n\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_vao_a18263ffbcdd4251a7789d5049023d8f8}
+number of vertex array objects 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anthonycouret/\+Developer/ant\+\_\+graphics/ant\+\_\+graphics/include/gl/ant\+Vao.\+h\end{DoxyCompactItemize}

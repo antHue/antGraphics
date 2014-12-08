@@ -1,0 +1,198 @@
+\hypertarget{classant_window}{\section{ant\+Window Class Reference}
+\label{classant_window}\index{ant\+Window@{ant\+Window}}
+}
+
+
+to define a glfw window with an opengl context  
+
+
+
+
+{\ttfamily \#include $<$ant\+Window.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+G\+L\+F\+Wwindow $\ast$ \hyperlink{classant_window_ae28c1d4b125dd3f63fe341bf1d62e844}{get\+Window} ()
+\begin{DoxyCompactList}\small\item\em render the \hyperlink{classant_window}{ant\+Window} object \end{DoxyCompactList}\item 
+\hypertarget{classant_window_a42d7686bd139117a7ec1211e9e983684}{int {\bfseries get\+Width} () const }\label{classant_window_a42d7686bd139117a7ec1211e9e983684}
+
+\item 
+\hypertarget{classant_window_a8b82e64b718ce3f18ab1745e6dec9e95}{int {\bfseries get\+Height} () const }\label{classant_window_a8b82e64b718ce3f18ab1745e6dec9e95}
+
+\item 
+void \hyperlink{classant_window_a8546d18d1de59e9320b186d2162237e9}{update\+F\+P\+S\+Counter} (void)
+\begin{DoxyCompactList}\small\item\em update the frames per second counter \end{DoxyCompactList}\item 
+\hypertarget{classant_window_aca207a01f3103ea9edf6907ccd7311c9}{void {\bfseries swap\+And\+Poll} (void)}\label{classant_window_aca207a01f3103ea9edf6907ccd7311c9}
+
+\item 
+\hypertarget{classant_window_ad94c5ab65a013247cd59fa109e4d8805}{void {\bfseries update\+Key\+Mouse} (double $\ast$m\+\_\+mouse\+\_\+x\+\_\+pos, double $\ast$m\+\_\+mouse\+\_\+y\+\_\+pos)}\label{classant_window_ad94c5ab65a013247cd59fa109e4d8805}
+
+\item 
+\hypertarget{classant_window_acde1aace224a84c9c51d858932cd3e9d}{void {\bfseries viewport} ()}\label{classant_window_acde1aace224a84c9c51d858932cd3e9d}
+
+\item 
+void \hyperlink{classant_window_a6e12ebc5212196d5eae855762d182782}{print\+Window\+Status} (void)
+\begin{DoxyCompactList}\small\item\em stream out informations about the \hyperlink{classant_window}{ant\+Window} object \end{DoxyCompactList}\item 
+\hyperlink{classant_window_a1d59042b3c9a5e98db451ce13b0d0553}{$\sim$ant\+Window} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static ant\+Window\+Sh\+Ptr \hyperlink{classant_window_ad91cfd2dcb6c03472036ab5c2336b239}{create} (int width, int height, const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em static method to create an \hyperlink{classant_window}{ant\+Window} object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classant_window_a8587e92cdc039ad0d3e5dbddd6b37600}{ant\+Window} (int width, int height, const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hypertarget{classant_window_ad85470c2398926767305d423404ad4db}{void {\bfseries init} ()}\label{classant_window_ad85470c2398926767305d423404ad4db}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ant\+Window\+Wk\+Ptr \hyperlink{classant_window_a44da6525e4278681d0563347ca970bbc}{m\+\_\+weak\+\_\+ptr}
+\item 
+G\+L\+F\+Wwindow $\ast$ \hyperlink{classant_window_a8b77985c8b4772027e1cbed42ce67daf}{m\+\_\+window\+\_\+ptr}
+\item 
+std\+::string \hyperlink{classant_window_a6799e6207a4367630aa5a7a0603bafbb}{m\+\_\+title}
+\item 
+int \hyperlink{classant_window_ae50857682369f77c9fab71c64d3d8299}{m\+\_\+width}
+\item 
+int \hyperlink{classant_window_a81b5d1fc4f545fbf76fa63d0292494b8}{m\+\_\+height}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+to define a glfw window with an opengl context 
+
+class \hyperlink{classant_window}{ant\+Window} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classant_window_a1d59042b3c9a5e98db451ce13b0d0553}{\index{ant\+Window@{ant\+Window}!````~ant\+Window@{$\sim$ant\+Window}}
+\index{````~ant\+Window@{$\sim$ant\+Window}!ant\+Window@{ant\+Window}}
+\subsubsection[{$\sim$ant\+Window}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Window\+::$\sim$ant\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classant_window_a1d59042b3c9a5e98db451ce13b0d0553}
+
+
+destructor 
+
+$\sim$ant\+Wndow \hypertarget{classant_window_a8587e92cdc039ad0d3e5dbddd6b37600}{\index{ant\+Window@{ant\+Window}!ant\+Window@{ant\+Window}}
+\index{ant\+Window@{ant\+Window}!ant\+Window@{ant\+Window}}
+\subsubsection[{ant\+Window}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Window\+::ant\+Window (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{const std\+::string \&}]{title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_window_a8587e92cdc039ad0d3e5dbddd6b37600}
+
+
+constructor 
+
+\hyperlink{classant_window}{ant\+Window} 
+\begin{DoxyParams}{Parameters}
+{\em width} & window width \\
+\hline
+{\em height} & window height \\
+\hline
+{\em title} & window title \\
+\hline
+{\em app\+\_\+sptr} & \hyperlink{classant_abstract_app}{ant\+Abstract\+App} implementation shared pointer \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classant_window_ad91cfd2dcb6c03472036ab5c2336b239}{\index{ant\+Window@{ant\+Window}!create@{create}}
+\index{create@{create}!ant\+Window@{ant\+Window}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static ant\+Window\+Sh\+Ptr ant\+Window\+::create (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{const std\+::string \&}]{title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classant_window_ad91cfd2dcb6c03472036ab5c2336b239}
+
+
+static method to create an \hyperlink{classant_window}{ant\+Window} object 
+
+create 
+\begin{DoxyParams}{Parameters}
+{\em width} & window width \\
+\hline
+{\em height} & window height \\
+\hline
+{\em title} & window title \\
+\hline
+{\em app\+\_\+sptr} & \hyperlink{classant_abstract_app}{ant\+Abstract\+App} implementation shared pointer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \hyperlink{classant_window}{ant\+Window} shared pointer 
+\end{DoxyReturn}
+\hypertarget{classant_window_ae28c1d4b125dd3f63fe341bf1d62e844}{\index{ant\+Window@{ant\+Window}!get\+Window@{get\+Window}}
+\index{get\+Window@{get\+Window}!ant\+Window@{ant\+Window}}
+\subsubsection[{get\+Window}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+F\+Wwindow$\ast$ ant\+Window\+::get\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classant_window_ae28c1d4b125dd3f63fe341bf1d62e844}
+
+
+render the \hyperlink{classant_window}{ant\+Window} object 
+
+render \hypertarget{classant_window_a6e12ebc5212196d5eae855762d182782}{\index{ant\+Window@{ant\+Window}!print\+Window\+Status@{print\+Window\+Status}}
+\index{print\+Window\+Status@{print\+Window\+Status}!ant\+Window@{ant\+Window}}
+\subsubsection[{print\+Window\+Status}]{\setlength{\rightskip}{0pt plus 5cm}void ant\+Window\+::print\+Window\+Status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classant_window_a6e12ebc5212196d5eae855762d182782}
+
+
+stream out informations about the \hyperlink{classant_window}{ant\+Window} object 
+
+print\+Wiwdow\+Status \hypertarget{classant_window_a8546d18d1de59e9320b186d2162237e9}{\index{ant\+Window@{ant\+Window}!update\+F\+P\+S\+Counter@{update\+F\+P\+S\+Counter}}
+\index{update\+F\+P\+S\+Counter@{update\+F\+P\+S\+Counter}!ant\+Window@{ant\+Window}}
+\subsubsection[{update\+F\+P\+S\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}void ant\+Window\+::update\+F\+P\+S\+Counter (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classant_window_a8546d18d1de59e9320b186d2162237e9}
+
+
+update the frames per second counter 
+
+update\+F\+P\+S\+C\+Ounter 
+\begin{DoxyParams}{Parameters}
+{\em window\+\_\+ptr} & a \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classant_window_a81b5d1fc4f545fbf76fa63d0292494b8}{\index{ant\+Window@{ant\+Window}!m\+\_\+height@{m\+\_\+height}}
+\index{m\+\_\+height@{m\+\_\+height}!ant\+Window@{ant\+Window}}
+\subsubsection[{m\+\_\+height}]{\setlength{\rightskip}{0pt plus 5cm}int ant\+Window\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_window_a81b5d1fc4f545fbf76fa63d0292494b8}
+window height \hypertarget{classant_window_a6799e6207a4367630aa5a7a0603bafbb}{\index{ant\+Window@{ant\+Window}!m\+\_\+title@{m\+\_\+title}}
+\index{m\+\_\+title@{m\+\_\+title}!ant\+Window@{ant\+Window}}
+\subsubsection[{m\+\_\+title}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string ant\+Window\+::m\+\_\+title\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_window_a6799e6207a4367630aa5a7a0603bafbb}
+window title \hypertarget{classant_window_a44da6525e4278681d0563347ca970bbc}{\index{ant\+Window@{ant\+Window}!m\+\_\+weak\+\_\+ptr@{m\+\_\+weak\+\_\+ptr}}
+\index{m\+\_\+weak\+\_\+ptr@{m\+\_\+weak\+\_\+ptr}!ant\+Window@{ant\+Window}}
+\subsubsection[{m\+\_\+weak\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Window\+Wk\+Ptr ant\+Window\+::m\+\_\+weak\+\_\+ptr\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_window_a44da6525e4278681d0563347ca970bbc}
+weak pointer \hypertarget{classant_window_ae50857682369f77c9fab71c64d3d8299}{\index{ant\+Window@{ant\+Window}!m\+\_\+width@{m\+\_\+width}}
+\index{m\+\_\+width@{m\+\_\+width}!ant\+Window@{ant\+Window}}
+\subsubsection[{m\+\_\+width}]{\setlength{\rightskip}{0pt plus 5cm}int ant\+Window\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_window_ae50857682369f77c9fab71c64d3d8299}
+window width \hypertarget{classant_window_a8b77985c8b4772027e1cbed42ce67daf}{\index{ant\+Window@{ant\+Window}!m\+\_\+window\+\_\+ptr@{m\+\_\+window\+\_\+ptr}}
+\index{m\+\_\+window\+\_\+ptr@{m\+\_\+window\+\_\+ptr}!ant\+Window@{ant\+Window}}
+\subsubsection[{m\+\_\+window\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}G\+L\+F\+Wwindow$\ast$ ant\+Window\+::m\+\_\+window\+\_\+ptr\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_window_a8b77985c8b4772027e1cbed42ce67daf}
+glfw window pointer 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anthonycouret/\+Developer/ant\+\_\+graphics/ant\+\_\+graphics/include/window/ant\+Window.\+h\end{DoxyCompactItemize}
