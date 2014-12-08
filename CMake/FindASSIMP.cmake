@@ -1,0 +1,35 @@
+# Searches for ASSIMP includes and library files
+#
+# Sets the variables
+#   ASSIMP_FOUND
+#   ASSIMP_INCLUDE_DIR
+#   ASSIMP_LIBRARY
+
+SET (ASSIMP_FOUND FALSE)
+
+FIND_PATH (ASSIMP_INCLUDE_DIR Importer.hpp
+  /usr/include/assimp
+  /usr/local/include/assimp
+  $ENV{HOME}/local/include/assimp
+  )
+
+FIND_LIBRARY (ASSIMP_LIBRARY NAMES ASSIMP PATHS
+  /usr/lib
+  /usr/local/lib
+  $ENV{HOME}/local/lib
+  )
+
+
+IF (ASSIMP_INCLUDE_DIR AND ASSIMP_LIBRARY)
+  SET (ASSIMP_FOUND TRUE)
+ENDIF (ASSIMP_INCLUDE_DIR AND ASSIMP_LIBRARY)
+
+IF (ASSIMP_LIBRARY)
+  SET (ASSIMP_LIBRARIES ${ASSIMP_LIBRARY})
+ENDIF(ASSIMP_LIBRARY)
+
+MARK_AS_ADVANCED (
+  ASSIMP_INCLUDE_DIR
+  ASSIMP_LIBRARIES
+  ASSIMP_LIBRARY  
+)
