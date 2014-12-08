@@ -97,23 +97,23 @@ void antApp::start()
     m_gui_shptr->addVec3VarRW( bar_id4, "position", &m_light_position );
     
     std::string light_vs =
-    "/Users/anthonycouret/Developer/ant_graphics/ant_graphics/_shaders/simple_shaders/simple.vert";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/simple_shaders/simple.vert";
     std::string light_fs =
-    "/Users/anthonycouret/Developer/ant_graphics/ant_graphics/_shaders/simple_shaders/simple.frag";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/simple_shaders/simple.frag";
     m_light_shader = antShader::createShaderProgram( light_vs, light_fs );
     
     std::string simple_vs =
-    "/Users/anthonycouret/Developer/ant_graphics/ant_graphics/_shaders/phong_shaders/phong.vert";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/phong_shaders/phong.vert";
     std::string simple_geom =
-    "/Users/anthonycouret/Developer/ant_graphics/ant_graphics/_shaders/phong_shaders/phong.geom";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/phong_shaders/phong.geom";
     std::string simple_fs =
-    "/Users/anthonycouret/Developer/ant_graphics/ant_graphics/_shaders/phong_shaders/phong.frag";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/phong_shaders/phong.frag";
     m_simple_shader = antShader::createShaderProgram( simple_vs, simple_fs );
     
     std::string skybox_vs =
-    "/Users/anthonycouret/Developer/ant_graphics/ant_graphics/_shaders/skybox_shaders/skybox.vert";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/skybox_shaders/skybox.vert";
     std::string skybox_fs =
-    "/Users/anthonycouret/Developer/ant_graphics/ant_graphics/_shaders/skybox_shaders/skybox.frag";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/skybox_shaders/skybox.frag";
     m_skybox_shader = antShader::createShaderProgram( skybox_vs, skybox_fs );
 }
 

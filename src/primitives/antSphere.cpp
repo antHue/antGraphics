@@ -12,7 +12,7 @@
 antSphereShPtr antSphere::create()
 {
     antObjLoaderShPtr obj_loader = antObjLoader::create
-        ( "/Users/anthonycouret/Developer/ant_graphics/ant_graphics/_models/sphere.obj" );
+        ( "/Users/anthonycouret/Developer/antGraphics/_models/sphere.obj" );
 
     antSphereShPtr antSphere_sh_ptr( new antSphere( obj_loader->getNVertices() ) );
     antSphere_sh_ptr->m_weak_ptr = antSphere_sh_ptr;

@@ -1,5 +1,7 @@
 _build
 app/simple/_build
 
+_xcodeproj
+
 syntax: glob
 *.DS_STORE

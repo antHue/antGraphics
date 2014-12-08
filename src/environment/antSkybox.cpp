@@ -99,7 +99,7 @@ antTextureShPtr antSkybox::getFaceTexture( int face )
         default:
             break;
     }
-//    return NULL;
+    return m_front_tex;
 }
 
 antTextureShPtr antSkybox::getFaceNormalTex( int face )
@@ -116,7 +116,7 @@ antTextureShPtr antSkybox::getFaceNormalTex( int face )
         default:
             break;
     }
-//    return NULL;
+    return m_front_norm;
 }
 
 GLenum antSkybox::getGLCubeMapTexture( int face )
@@ -133,7 +133,7 @@ GLenum antSkybox::getGLCubeMapTexture( int face )
         default:
             break;
     }
-//    return NULL;
+    return GL_TEXTURE_CUBE_MAP_POSITIVE_Z;
 }
 
 
