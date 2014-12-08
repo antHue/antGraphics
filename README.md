@@ -21,13 +21,13 @@ antTweakBar GUI.
 
 it offers some app examples. 
 
-	from OpenGL superbible 6.
+from OpenGL superbible 6.
 	
-	from Anton’s OpenGL 4 tutorials.
+from Anton’s OpenGL 4 tutorials.
 	
-	from nvidia GPU Gems.
+from nvidia GPU Gems.
 	
-	and my personal ones. 
+and my personal ones. 
 
 much thanks to Anton Gerdelan, RtMidi and antTweakBar.
 
