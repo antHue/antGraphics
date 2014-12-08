@@ -9,27 +9,25 @@ HELLO.
 
 antGraphics is a 3D graphics engine. provided « as is ».
 
-thanks to a real-time rendering / computer graphics / IT student effort.
+it uses modern OpenGL 4.1 specifications and GLFW3......
 
-it uses modern OpenGL 4.1 specifications and GLFW3.
+build under MacOSX......................................
 
-build under MacOSX.
+RtMidi support with Akai MPD32..........................
 
-RtMidi support with Akai MPD32.
+antTweakBar GUI.........................................
 
-antTweakBar GUI.
+it offers some app examples............................. 
 
-it offers some app examples. 
-
-from OpenGL superbible 6.
+from OpenGL superbible 6................................
 	
-from Anton’s OpenGL 4 tutorials.
+from Anton’s OpenGL 4 tutorials.........................
 	
-from nvidia GPU Gems.
+from nvidia GPU Gems....................................
 	
-and my personal ones. 
+and my personal ones.................................... 
 
-much thanks to Anton Gerdelan, RtMidi and antTweakBar.
+much thanks to Anton Gerdelan, RtMidi and antTweakBar...
 
-antGraphics because I’m Anthony. 
+antGraphics because I’m Anthony......................... 
 
