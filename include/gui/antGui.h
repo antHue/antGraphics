@@ -36,10 +36,12 @@ class antGui /*: public antDrawable*/
     
     int addBar( const std::string & name );
     
+    void addFloatVarRW( int bar_id, const std::string & name, float * var );
     void addRGBAVarRW( int bar_id, const std::string & name, antRGBA * var );
     void addQuatVarRW( int bar_id, const std::string & name, antVec4 * var );
     void addVec3VarRW( int bar_id, const std::string & name, antVec3 * var );
     void addToggleRW( int bar_id, const std::string & name, bool * var );
+    void addRotTypeRW( int bar_id, const std::string & name, antRotationType * type );
 
     
     void defVarShortCut

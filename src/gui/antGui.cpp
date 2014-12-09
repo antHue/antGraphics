@@ -60,6 +60,13 @@ int antGui::addBar( const std::string & name )
     return ( m_bars_count++ );
 }
 
+void antGui::addFloatVarRW( int bar_id, const std::string & name, float * var )
+{
+    TwAddVarRW( m_ant_bars[bar_id], name.c_str(), TW_TYPE_FLOAT, var,
+               ( " label=" + name + " " ).c_str() );
+}
+
+
 void antGui::addRGBAVarRW( int bar_id, const std::string & name, antRGBA * var )
 {
     std::string ext_name[4] = { "r", "g", "b", "a" };
@@ -92,6 +99,12 @@ void antGui::addToggleRW( int bar_id, const std::string & name, bool * var )
     TwAddVarRW( m_ant_bars[bar_id], name.c_str(), TW_TYPE_BOOL8, var,
                ( " label=" + name + " " ).c_str() );
 }
+
+void antGui::addRotTypeRW( int bar_id, const std::string & name, antRotationType * type )
+{
+    std::cout << "NOT DEFINED void antGui::addRotTypeRW( int bar_id, const std::string & name, antRotationType * type )" << std::endl;
+}
+
 
 void antGui::defVarShortCut( int bar_id, const std::string & name, const std::string & incrKey, const std::string & decrKey )
 {

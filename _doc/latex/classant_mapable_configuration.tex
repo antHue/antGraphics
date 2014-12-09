@@ -1,0 +1,245 @@
+\hypertarget{classant_mapable_configuration}{\section{ant\+Mapable\+Configuration Class Reference}
+\label{classant_mapable_configuration}\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+}
+Inheritance diagram for ant\+Mapable\+Configuration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classant_mapable_configuration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classant_mapable_configuration_a2617ce19af5d343f72205f74a764bcd7}{{\bfseries ant\+Mapable\+Configuration} (ant\+Rotation\+Type type)}\label{classant_mapable_configuration_a2617ce19af5d343f72205f74a764bcd7}
+
+\item 
+virtual \hyperlink{classant_mapable_configuration_ae8a4e2e32f16d82307d698526eeaa3d2}{$\sim$ant\+Mapable\+Configuration} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual void \hyperlink{classant_mapable_configuration_a0c868ba3a8773ad918d868fe0443f454}{set\+Position} (ant\+Vec3 position)
+\begin{DoxyCompactList}\small\item\em position setter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classant_mapable_configuration_aface0ddcf2b7b664d95182a6ef3bb49f}{set\+Rotation} (ant\+Quat rotation)
+\begin{DoxyCompactList}\small\item\em rotation setter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classant_mapable_configuration_a548a00bee9290bd14419d46a56609f13}{set\+Scale} (float scale)
+\begin{DoxyCompactList}\small\item\em scale setter \end{DoxyCompactList}\item 
+virtual void \hyperlink{classant_mapable_configuration_a2976225cdfb5febabd7374b742aec8db}{set\+Type} (ant\+Rotation\+Type type)
+\begin{DoxyCompactList}\small\item\em type setter \end{DoxyCompactList}\item 
+ant\+Mapable\+Vec3 \hyperlink{classant_mapable_configuration_ad7ca2e5ed86e3f7f9e08b25e41c8178f}{get\+Mapable\+Position} ()
+\begin{DoxyCompactList}\small\item\em position pointer getter \end{DoxyCompactList}\item 
+ant\+Mapable\+Quat \hyperlink{classant_mapable_configuration_ae7ceaa2c58d0538666bd73960cf4f8e4}{get\+Mapable\+Rotation} ()
+\begin{DoxyCompactList}\small\item\em rotation getter \end{DoxyCompactList}\item 
+\hypertarget{classant_mapable_configuration_a6071febe811791e1aa53c91e2d5be30d}{ant\+Mapable\+Vec4 {\bfseries get\+Tw\+Mapable\+Rotation} ()}\label{classant_mapable_configuration_a6071febe811791e1aa53c91e2d5be30d}
+
+\item 
+virtual ant\+Mat4 \hyperlink{classant_mapable_configuration_a5c9a9abf15b45ad0f6851dc3caf20342}{get\+Local\+To\+World\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em transform, rotate and scale identity matrix \end{DoxyCompactList}\item 
+virtual ant\+Mat4 \hyperlink{classant_mapable_configuration_ac46245a2ba3b704309a85412c16d73ba}{get\+World\+To\+Origin\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em inverse transform and rotate, then scale identity matrix \end{DoxyCompactList}\item 
+\hypertarget{classant_mapable_configuration_a0c4195ffdb71966119ebdea8ef5a46e6}{ant\+Abstract\+Configuration\+Sh\+Ptr {\bfseries make\+Base} ()}\label{classant_mapable_configuration_a0c4195ffdb71966119ebdea8ef5a46e6}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classant_mapable_configuration_a32f253dd6ace10a4956a113d21f85666}{static ant\+Mapable\+Configuration\+Sh\+Ptr {\bfseries create} (ant\+Rotation\+Type type=S\+E\+L\+F)}\label{classant_mapable_configuration_a32f253dd6ace10a4956a113d21f85666}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ant\+Mapable\+Rot\+Type \hyperlink{classant_mapable_configuration_abf6ce9445acae576092246c9bfeade86}{m\+\_\+type}
+\item 
+ant\+Mapable\+Vec3 \hyperlink{classant_mapable_configuration_aa6407ddaead7f445d696d91ab7c736ed}{m\+\_\+position}
+\item 
+ant\+Mapable\+Quat \hyperlink{classant_mapable_configuration_a14ba37effab1c8341a75c6362cd2def4}{m\+\_\+rotation}
+\item 
+\hypertarget{classant_mapable_configuration_aa831622293bb88a5c13d79e457a78a33}{ant\+Mapable\+Vec4 {\bfseries m\+\_\+tw\+\_\+rotation}}\label{classant_mapable_configuration_aa831622293bb88a5c13d79e457a78a33}
+
+\item 
+ant\+Mapable\+Float \hyperlink{classant_mapable_configuration_af0954326d95c30af4f04c473fc830569}{m\+\_\+scale}
+\item 
+ant\+Mapable\+Configuration\+Wk\+Ptr \hyperlink{classant_mapable_configuration_a4e41179ff8075a4d8834e4151bbd7fdb}{m\+\_\+weak\+\_\+ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classant_mapable_configuration_ae8a4e2e32f16d82307d698526eeaa3d2}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!````~ant\+Mapable\+Configuration@{$\sim$ant\+Mapable\+Configuration}}
+\index{````~ant\+Mapable\+Configuration@{$\sim$ant\+Mapable\+Configuration}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{$\sim$ant\+Mapable\+Configuration}]{\setlength{\rightskip}{0pt plus 5cm}virtual ant\+Mapable\+Configuration\+::$\sim$ant\+Mapable\+Configuration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classant_mapable_configuration_ae8a4e2e32f16d82307d698526eeaa3d2}
+
+
+destructor 
+
+$\sim$ant\+Mapable\+Configuration 
+
+\subsection{Member Function Documentation}
+\hypertarget{classant_mapable_configuration_a5c9a9abf15b45ad0f6851dc3caf20342}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!get\+Local\+To\+World\+Matrix@{get\+Local\+To\+World\+Matrix}}
+\index{get\+Local\+To\+World\+Matrix@{get\+Local\+To\+World\+Matrix}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{get\+Local\+To\+World\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}virtual ant\+Mat4 ant\+Mapable\+Configuration\+::get\+Local\+To\+World\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classant_mapable_configuration_a5c9a9abf15b45ad0f6851dc3caf20342}
+
+
+transform, rotate and scale identity matrix 
+
+get\+Local\+To\+World\+Matrix \begin{DoxyReturn}{Returns}
+local to world matrix 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classant_abstract_configuration}{ant\+Abstract\+Configuration}.
+
+\hypertarget{classant_mapable_configuration_ad7ca2e5ed86e3f7f9e08b25e41c8178f}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!get\+Mapable\+Position@{get\+Mapable\+Position}}
+\index{get\+Mapable\+Position@{get\+Mapable\+Position}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{get\+Mapable\+Position}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Mapable\+Vec3 ant\+Mapable\+Configuration\+::get\+Mapable\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classant_mapable_configuration_ad7ca2e5ed86e3f7f9e08b25e41c8178f}
+
+
+position pointer getter 
+
+get\+Mapable\+Position \begin{DoxyReturn}{Returns}
+position vector pointer 
+\end{DoxyReturn}
+\hypertarget{classant_mapable_configuration_ae7ceaa2c58d0538666bd73960cf4f8e4}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!get\+Mapable\+Rotation@{get\+Mapable\+Rotation}}
+\index{get\+Mapable\+Rotation@{get\+Mapable\+Rotation}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{get\+Mapable\+Rotation}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Mapable\+Quat ant\+Mapable\+Configuration\+::get\+Mapable\+Rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classant_mapable_configuration_ae7ceaa2c58d0538666bd73960cf4f8e4}
+
+
+rotation getter 
+
+get\+Rotation \begin{DoxyReturn}{Returns}
+rotation versor 
+\end{DoxyReturn}
+\hypertarget{classant_mapable_configuration_ac46245a2ba3b704309a85412c16d73ba}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!get\+World\+To\+Origin\+Matrix@{get\+World\+To\+Origin\+Matrix}}
+\index{get\+World\+To\+Origin\+Matrix@{get\+World\+To\+Origin\+Matrix}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{get\+World\+To\+Origin\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}virtual ant\+Mat4 ant\+Mapable\+Configuration\+::get\+World\+To\+Origin\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classant_mapable_configuration_ac46245a2ba3b704309a85412c16d73ba}
+
+
+inverse transform and rotate, then scale identity matrix 
+
+get\+World\+To\+Origin\+Matrix \begin{DoxyReturn}{Returns}
+world to origin matrix 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classant_abstract_configuration}{ant\+Abstract\+Configuration}.
+
+\hypertarget{classant_mapable_configuration_a0c868ba3a8773ad918d868fe0443f454}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ant\+Mapable\+Configuration\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{ant\+Vec3}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classant_mapable_configuration_a0c868ba3a8773ad918d868fe0443f454}
+
+
+position setter 
+
+set\+Position 
+\begin{DoxyParams}{Parameters}
+{\em position} & position vector \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classant_abstract_configuration_a1c5fd57da800e0b5e0d6cd5fff2c6ca6}{ant\+Abstract\+Configuration}.
+
+\hypertarget{classant_mapable_configuration_aface0ddcf2b7b664d95182a6ef3bb49f}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!set\+Rotation@{set\+Rotation}}
+\index{set\+Rotation@{set\+Rotation}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{set\+Rotation}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ant\+Mapable\+Configuration\+::set\+Rotation (
+\begin{DoxyParamCaption}
+\item[{ant\+Quat}]{rotation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classant_mapable_configuration_aface0ddcf2b7b664d95182a6ef3bb49f}
+
+
+rotation setter 
+
+set\+Rotation 
+\begin{DoxyParams}{Parameters}
+{\em rotation} & rotation versor \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classant_abstract_configuration}{ant\+Abstract\+Configuration}.
+
+\hypertarget{classant_mapable_configuration_a548a00bee9290bd14419d46a56609f13}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{set\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ant\+Mapable\+Configuration\+::set\+Scale (
+\begin{DoxyParamCaption}
+\item[{float}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classant_mapable_configuration_a548a00bee9290bd14419d46a56609f13}
+
+
+scale setter 
+
+set\+Scale 
+\begin{DoxyParams}{Parameters}
+{\em scale} & scale factor \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classant_abstract_configuration}{ant\+Abstract\+Configuration}.
+
+\hypertarget{classant_mapable_configuration_a2976225cdfb5febabd7374b742aec8db}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{set\+Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ant\+Mapable\+Configuration\+::set\+Type (
+\begin{DoxyParamCaption}
+\item[{ant\+Rotation\+Type}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classant_mapable_configuration_a2976225cdfb5febabd7374b742aec8db}
+
+
+type setter 
+
+set\+Type 
+\begin{DoxyParams}{Parameters}
+{\em type} & S\+E\+L\+F or O\+R\+B\+I\+T \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classant_abstract_configuration}{ant\+Abstract\+Configuration}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classant_mapable_configuration_aa6407ddaead7f445d696d91ab7c736ed}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!m\+\_\+position@{m\+\_\+position}}
+\index{m\+\_\+position@{m\+\_\+position}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{m\+\_\+position}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Mapable\+Vec3 ant\+Mapable\+Configuration\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_mapable_configuration_aa6407ddaead7f445d696d91ab7c736ed}
+position vector \hypertarget{classant_mapable_configuration_a14ba37effab1c8341a75c6362cd2def4}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!m\+\_\+rotation@{m\+\_\+rotation}}
+\index{m\+\_\+rotation@{m\+\_\+rotation}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{m\+\_\+rotation}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Mapable\+Quat ant\+Mapable\+Configuration\+::m\+\_\+rotation\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_mapable_configuration_a14ba37effab1c8341a75c6362cd2def4}
+rotation versor \hypertarget{classant_mapable_configuration_af0954326d95c30af4f04c473fc830569}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!m\+\_\+scale@{m\+\_\+scale}}
+\index{m\+\_\+scale@{m\+\_\+scale}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{m\+\_\+scale}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Mapable\+Float ant\+Mapable\+Configuration\+::m\+\_\+scale\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_mapable_configuration_af0954326d95c30af4f04c473fc830569}
+scale factor \hypertarget{classant_mapable_configuration_abf6ce9445acae576092246c9bfeade86}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!m\+\_\+type@{m\+\_\+type}}
+\index{m\+\_\+type@{m\+\_\+type}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{m\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Mapable\+Rot\+Type ant\+Mapable\+Configuration\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_mapable_configuration_abf6ce9445acae576092246c9bfeade86}
+rotation and transformation type \hypertarget{classant_mapable_configuration_a4e41179ff8075a4d8834e4151bbd7fdb}{\index{ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}!m\+\_\+weak\+\_\+ptr@{m\+\_\+weak\+\_\+ptr}}
+\index{m\+\_\+weak\+\_\+ptr@{m\+\_\+weak\+\_\+ptr}!ant\+Mapable\+Configuration@{ant\+Mapable\+Configuration}}
+\subsubsection[{m\+\_\+weak\+\_\+ptr}]{\setlength{\rightskip}{0pt plus 5cm}ant\+Mapable\+Configuration\+Wk\+Ptr ant\+Mapable\+Configuration\+::m\+\_\+weak\+\_\+ptr\hspace{0.3cm}{\ttfamily [private]}}}\label{classant_mapable_configuration_a4e41179ff8075a4d8834e4151bbd7fdb}
+weak pointer 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anthonycouret/\+Developer/ant\+Graphics/include/configuration/ant\+Mapable\+Configuration.\+h\end{DoxyCompactItemize}

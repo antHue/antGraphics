@@ -1,13 +1,13 @@
 //
 //  antConfiguration.cpp
-//  ant_graphics
+//  _xcodeproj
 //
-//  Created by anthonycouret on 02/12/2014.
+//  Created by anthonycouret on 09/12/2014.
 //  Copyright (c) 2014 ac. All rights reserved.
 //
 
 #include "antConfiguration.h"
-#include <iostream>
+#include "antMapableConfiguration.h"
 
 antConfigurationShPtr antConfiguration::create( antRotationType type )
 {
@@ -16,23 +16,8 @@ antConfigurationShPtr antConfiguration::create( antRotationType type )
     return antConfiguration_sh_ptr;
 }
 
-antConfigurationShPtr antConfiguration::create( const antVec3 & position, antRotationType type )
-{
-    antConfigurationShPtr antConfiguration_sh_ptr( new antConfiguration( position, type ) );
-    antConfiguration_sh_ptr->m_weak_ptr = antConfiguration_sh_ptr;
-    return antConfiguration_sh_ptr;
-}
-
-antConfigurationShPtr antConfiguration::create( const antVec3 & position, const antQuat & rotation,
-                                               antRotationType type )
-{
-    antConfigurationShPtr antConfiguration_sh_ptr( new antConfiguration( position, rotation, type ) );
-    antConfiguration_sh_ptr->m_weak_ptr = antConfiguration_sh_ptr;
-    return antConfiguration_sh_ptr;
-}
-
-
-antConfiguration::antConfiguration( antRotationType type )
+antConfiguration::antConfiguration( antRotationType type ) :
+antAbstractConfiguration()
 {
     m_type = type;
     m_position = antVec3( 0.f, 0.f, 0.f );
@@ -40,43 +25,16 @@ antConfiguration::antConfiguration( antRotationType type )
     m_scale = 1.f;
 }
 
-antConfiguration::antConfiguration( const antVec3 & position, antRotationType type )
-{
-    m_type = type;
-    m_position = position;
-    m_rotation = quat_from_axis_rad( 1.f, 0.f, 0.f, 0.f );
-    m_scale = 1.f;
-}
-
-antConfiguration::antConfiguration( const antVec3 & position, const antQuat & rotation,
-                                   antRotationType type )
-{
-    m_type = type;
-    m_position = position;
-    m_rotation = rotation;
-    m_scale = 1.f;
-}
-
-antConfiguration::~antConfiguration()
-{
-    m_weak_ptr.reset();
-}
-
+antConfiguration::~antConfiguration() {}
 
 void antConfiguration::setPosition( antVec3 position )
 {
     m_position = position;
 }
 
-
 void antConfiguration::setRotation( antQuat rotation )
 {
     m_rotation = rotation;
-}
-
-void antConfiguration::setType( antRotationType type )
-{
-    m_type = type;
 }
 
 void antConfiguration::setScale( float scale )
@@ -84,6 +42,20 @@ void antConfiguration::setScale( float scale )
     m_scale = scale;
 }
 
+void antConfiguration::setType( antRotationType type )
+{
+    m_type = type;
+}
+
+antVec3 antConfiguration::getPosition()
+{
+    return m_position;
+}
+
+antQuat antConfiguration::getRotation()
+{
+    return m_rotation;
+}
 
 antMat4 antConfiguration::getLocalToWorldMatrix()
 {
@@ -95,10 +67,10 @@ antMat4 antConfiguration::getLocalToWorldMatrix()
     switch ( m_type )
     {
         case SELF : local_to_world_matrix = scale( translation_mat * rotation_mat,
-                                                    antVec3( m_scale, m_scale, m_scale ) );
+                                                  antVec3( m_scale, m_scale, m_scale ) );
             break;
         case ORBIT : local_to_world_matrix = scale( rotation_mat * translation_mat,
-                                                     antVec3( m_scale, m_scale, m_scale ) );
+                                                   antVec3( m_scale, m_scale, m_scale ) );
             break;
     }
     
@@ -123,21 +95,22 @@ antMat4 antConfiguration::getWorldToOriginMatrix()
     switch ( m_type )
     {
         case SELF : world_to_origin_matrix = scale( inv_translation_mat * inv_rotation_mat,
-                                                    antVec3( m_scale, m_scale, m_scale ) );
+                                                   antVec3( m_scale, m_scale, m_scale ) );
             break;
         case ORBIT : world_to_origin_matrix = scale( inv_rotation_mat * inv_translation_mat,
-                                                     antVec3(m_scale, m_scale, m_scale) );
+                                                    antVec3(m_scale, m_scale, m_scale) );
             break;
     }
     return world_to_origin_matrix;
 }
 
-antVec3 antConfiguration::getPosition()
-{
-    return m_position;
-}
 
-antQuat antConfiguration::getRotation()
+antAbstractConfigurationShPtr antConfiguration::makeMapable()
 {
-    return m_rotation;
+    antAbstractConfigurationShPtr m = antMapableConfiguration::create();
+    m->setPosition( m_position );
+    m->setRotation( m_rotation );
+    m->setType( m_type );
+    m->setScale( m_scale );
+    return m;
 }

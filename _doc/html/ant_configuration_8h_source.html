@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>AntGraphics: /Users/anthonycouret/Developer/ant_graphics/ant_graphics/include/configuration/antConfiguration.h Source File</title>
+<title>AntGraphics: /Users/anthonycouret/Developer/antGraphics/include/configuration/antConfiguration.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,108 +99,97 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;antTypes.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="classant_configuration.html">antConfiguration</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">typedef</span> std::shared_ptr&lt;antConfiguration&gt; antConfigurationShPtr;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">typedef</span> std::weak_ptr&lt;antConfiguration&gt; antConfigurationWkPtr;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> { SELF = 0, ORBIT = 1 } antRotationType;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span><a class="code" href="classant_configuration.html">antConfiguration</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span> :</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span>    <span class="keyword">static</span> antConfigurationShPtr create( antRotationType type = SELF );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span>    <span class="keyword">static</span> antConfigurationShPtr create</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ( <span class="keyword">const</span> antVec3 &amp; position, antRotationType type = SELF );</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;antAbstractConfiguration.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">class </span><a class="code" href="classant_configuration.html">antConfiguration</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">typedef</span> std::shared_ptr&lt;antConfiguration&gt; antConfigurationShPtr;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">typedef</span> std::weak_ptr&lt;antConfiguration&gt; antConfigurationWkPtr;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classant_configuration.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classant_configuration.html">antConfiguration</a> : <span class="keyword">public</span> <a class="code" href="classant_abstract_configuration.html">antAbstractConfiguration</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span> :</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span>    <span class="keyword">static</span> antConfigurationShPtr <a class="code" href="classant_configuration.html#a50a63e51ad01a040c130b9e729b1f47b">create</a>( antRotationType type = SELF );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span>    <a class="code" href="classant_configuration.html#a572b780d41fcc29ba89f8f43a719f1ae">antConfiguration</a>( antRotationType type );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <a class="code" href="classant_configuration.html#a76b24fe6a1488ac3d53bcb3292de9e41">~antConfiguration</a>();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span>    <span class="keyword">static</span> antConfigurationShPtr create</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ( <span class="keyword">const</span> antVec3 &amp; position, <span class="keyword">const</span> antQuat &amp; rotation, antRotationType type = SELF );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span>    ~<a class="code" href="classant_configuration.html">antConfiguration</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setPosition( antVec3 position );</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setRotation( antQuat rotation );</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classant_configuration.html#a8d015790427644c17332993c8f63ae94">setScale</a>( <span class="keywordtype">float</span> scale );</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classant_configuration.html#a28c3552db786edeb70dc223f3cc5b3e6">setType</a>( antRotationType type );</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"></span>    antVec3 <a class="code" href="classant_configuration.html#a4e178bdbab92eb1438b27d09a61bd2f3">getPosition</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"></span>    antQuat <a class="code" href="classant_configuration.html#a88f393f030510d9893a7488c73332854">getRotation</a>();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classant_configuration.html#af9a9ea5087d5179ebc2ff526a33a33e7">setPosition</a>( antVec3 position );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classant_configuration.html#aef07bf707197372ffa3b454d0fa01b81">setRotation</a>( antQuat rotation );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classant_configuration.html#a85eb7a1ce3ad32a006aaae9a7b4d8991">setScale</a>( <span class="keywordtype">float</span> scale );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classant_configuration.html#acb6ac97d627d528f5c3dbd5d7ef124b5">setType</a>( antRotationType type );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"></span>    antVec3 <a class="code" href="classant_configuration.html#a4e178bdbab92eb1438b27d09a61bd2f3">getPosition</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"></span>    antQuat <a class="code" href="classant_configuration.html#a88f393f030510d9893a7488c73332854">getRotation</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> antMat4 <a class="code" href="classant_configuration.html#ad82e2e64fabdaf418b928c89c70cdd8a">getLocalToWorldMatrix</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> antMat4 <a class="code" href="classant_configuration.html#ac0a72cfaf4f48ee1671d917d12e5a686">getWorldToOriginMatrix</a>();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    antAbstractConfigurationShPtr makeMapable();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classant_configuration.html#a9c6602c2995ea38583650da13b36b015">  122</a></span>&#160;    antRotationType <a class="code" href="classant_configuration.html#a9c6602c2995ea38583650da13b36b015">m_type</a>;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"></span>    antMat4 getLocalToWorldMatrix();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment"></span>    antMat4 <a class="code" href="classant_configuration.html#a06e400aad271a2d541a5e5892cda0ccf">getWorldToOriginMatrix</a>();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">private</span> :</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    antRotationType <a class="code" href="classant_configuration.html#a9c6602c2995ea38583650da13b36b015">m_type</a>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    antVec3 <a class="code" href="classant_configuration.html#ab9fd2e843700f3589988064a9a2b494d">m_position</a>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    </div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classant_configuration.html#a2cd9ee51364f0481040a6c9c1faf42ac">  151</a></span>&#160;    antQuat <a class="code" href="classant_configuration.html#a2cd9ee51364f0481040a6c9c1faf42ac">m_rotation</a>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    </div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classant_configuration.html#ae1addd09ae683a014f37492aab019926">  154</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classant_configuration.html#ae1addd09ae683a014f37492aab019926">m_scale</a>;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment"></span>    <a class="code" href="classant_configuration.html">antConfiguration</a>( antRotationType type );</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment"></span>    <a class="code" href="classant_configuration.html">antConfiguration</a>( <span class="keyword">const</span> antVec3 &amp; position, antRotationType type );</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">//--------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"></span>    <a class="code" href="classant_configuration.html">antConfiguration</a>( <span class="keyword">const</span> antVec3 &amp; position, <span class="keyword">const</span> antQuat &amp; rotation, antRotationType type );</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    antConfigurationWkPtr <a class="code" href="classant_configuration.html#a0ee5b6d1666f12fc211e274023780510">m_weak_ptr</a>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;};</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__ant_graphics__antConfiguration__) */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="classant_configuration_html_ab9fd2e843700f3589988064a9a2b494d"><div class="ttname"><a href="classant_configuration.html#ab9fd2e843700f3589988064a9a2b494d">antConfiguration::m_position</a></div><div class="ttdeci">antVec3 m_position</div><div class="ttdef"><b>Definition:</b> antConfiguration - copie.h:79</div></div>
-<div class="ttc" id="classant_configuration_html_a0ee5b6d1666f12fc211e274023780510"><div class="ttname"><a href="classant_configuration.html#a0ee5b6d1666f12fc211e274023780510">antConfiguration::m_weak_ptr</a></div><div class="ttdeci">antConfigurationWkPtr m_weak_ptr</div><div class="ttdef"><b>Definition:</b> antConfiguration - copie.h:95</div></div>
-<div class="ttc" id="classant_configuration_html_a2cd9ee51364f0481040a6c9c1faf42ac"><div class="ttname"><a href="classant_configuration.html#a2cd9ee51364f0481040a6c9c1faf42ac">antConfiguration::m_rotation</a></div><div class="ttdeci">antQuat m_rotation</div><div class="ttdef"><b>Definition:</b> antConfiguration.h:151</div></div>
-<div class="ttc" id="classant_configuration_html_a06e400aad271a2d541a5e5892cda0ccf"><div class="ttname"><a href="classant_configuration.html#a06e400aad271a2d541a5e5892cda0ccf">antConfiguration::getWorldToOriginMatrix</a></div><div class="ttdeci">antMat4 getWorldToOriginMatrix()</div><div class="ttdoc">inverse transform and rotate, then scale identity matrix </div></div>
-<div class="ttc" id="classant_configuration_html_a9c6602c2995ea38583650da13b36b015"><div class="ttname"><a href="classant_configuration.html#a9c6602c2995ea38583650da13b36b015">antConfiguration::m_type</a></div><div class="ttdeci">antRotationType m_type</div><div class="ttdef"><b>Definition:</b> antConfiguration - copie.h:77</div></div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classant_configuration.html#ab9fd2e843700f3589988064a9a2b494d">  125</a></span>&#160;    antVec3 <a class="code" href="classant_configuration.html#ab9fd2e843700f3589988064a9a2b494d">m_position</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classant_configuration.html#a2cd9ee51364f0481040a6c9c1faf42ac">  128</a></span>&#160;    antQuat <a class="code" href="classant_configuration.html#a2cd9ee51364f0481040a6c9c1faf42ac">m_rotation</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    </div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classant_configuration.html#ae1addd09ae683a014f37492aab019926">  131</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classant_configuration.html#ae1addd09ae683a014f37492aab019926">m_scale</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classant_configuration.html#a0ee5b6d1666f12fc211e274023780510">  134</a></span>&#160;    antConfigurationWkPtr <a class="code" href="classant_configuration.html#a0ee5b6d1666f12fc211e274023780510">m_weak_ptr</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* defined(__ant_graphics__antConfiguration__) */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classant_configuration_html_a85eb7a1ce3ad32a006aaae9a7b4d8991"><div class="ttname"><a href="classant_configuration.html#a85eb7a1ce3ad32a006aaae9a7b4d8991">antConfiguration::setScale</a></div><div class="ttdeci">virtual void setScale(float scale)</div><div class="ttdoc">scale setter </div></div>
+<div class="ttc" id="classant_configuration_html_ad82e2e64fabdaf418b928c89c70cdd8a"><div class="ttname"><a href="classant_configuration.html#ad82e2e64fabdaf418b928c89c70cdd8a">antConfiguration::getLocalToWorldMatrix</a></div><div class="ttdeci">virtual antMat4 getLocalToWorldMatrix()</div><div class="ttdoc">transform, rotate and scale identity matrix </div></div>
+<div class="ttc" id="classant_configuration_html_ab9fd2e843700f3589988064a9a2b494d"><div class="ttname"><a href="classant_configuration.html#ab9fd2e843700f3589988064a9a2b494d">antConfiguration::m_position</a></div><div class="ttdeci">antVec3 m_position</div><div class="ttdef"><b>Definition:</b> antConfiguration.h:125</div></div>
+<div class="ttc" id="classant_configuration_html_af9a9ea5087d5179ebc2ff526a33a33e7"><div class="ttname"><a href="classant_configuration.html#af9a9ea5087d5179ebc2ff526a33a33e7">antConfiguration::setPosition</a></div><div class="ttdeci">virtual void setPosition(antVec3 position)</div><div class="ttdoc">position setter </div></div>
+<div class="ttc" id="classant_configuration_html_a0ee5b6d1666f12fc211e274023780510"><div class="ttname"><a href="classant_configuration.html#a0ee5b6d1666f12fc211e274023780510">antConfiguration::m_weak_ptr</a></div><div class="ttdeci">antConfigurationWkPtr m_weak_ptr</div><div class="ttdef"><b>Definition:</b> antConfiguration.h:134</div></div>
+<div class="ttc" id="classant_configuration_html_aef07bf707197372ffa3b454d0fa01b81"><div class="ttname"><a href="classant_configuration.html#aef07bf707197372ffa3b454d0fa01b81">antConfiguration::setRotation</a></div><div class="ttdeci">virtual void setRotation(antQuat rotation)</div><div class="ttdoc">rotation setter </div></div>
+<div class="ttc" id="classant_configuration_html_a2cd9ee51364f0481040a6c9c1faf42ac"><div class="ttname"><a href="classant_configuration.html#a2cd9ee51364f0481040a6c9c1faf42ac">antConfiguration::m_rotation</a></div><div class="ttdeci">antQuat m_rotation</div><div class="ttdef"><b>Definition:</b> antConfiguration.h:128</div></div>
+<div class="ttc" id="classant_configuration_html_a572b780d41fcc29ba89f8f43a719f1ae"><div class="ttname"><a href="classant_configuration.html#a572b780d41fcc29ba89f8f43a719f1ae">antConfiguration::antConfiguration</a></div><div class="ttdeci">antConfiguration(antRotationType type)</div><div class="ttdoc">constructor </div></div>
+<div class="ttc" id="classant_configuration_html_acb6ac97d627d528f5c3dbd5d7ef124b5"><div class="ttname"><a href="classant_configuration.html#acb6ac97d627d528f5c3dbd5d7ef124b5">antConfiguration::setType</a></div><div class="ttdeci">virtual void setType(antRotationType type)</div><div class="ttdoc">type setter </div></div>
+<div class="ttc" id="classant_configuration_html_a50a63e51ad01a040c130b9e729b1f47b"><div class="ttname"><a href="classant_configuration.html#a50a63e51ad01a040c130b9e729b1f47b">antConfiguration::create</a></div><div class="ttdeci">static antConfigurationShPtr create(antRotationType type=SELF)</div><div class="ttdoc">static method to create an antConfiguration shared pointer </div></div>
+<div class="ttc" id="classant_configuration_html_a9c6602c2995ea38583650da13b36b015"><div class="ttname"><a href="classant_configuration.html#a9c6602c2995ea38583650da13b36b015">antConfiguration::m_type</a></div><div class="ttdeci">antRotationType m_type</div><div class="ttdef"><b>Definition:</b> antConfiguration.h:122</div></div>
+<div class="ttc" id="classant_configuration_html_a76b24fe6a1488ac3d53bcb3292de9e41"><div class="ttname"><a href="classant_configuration.html#a76b24fe6a1488ac3d53bcb3292de9e41">antConfiguration::~antConfiguration</a></div><div class="ttdeci">virtual ~antConfiguration()</div><div class="ttdoc">destructor </div></div>
+<div class="ttc" id="classant_abstract_configuration_html"><div class="ttname"><a href="classant_abstract_configuration.html">antAbstractConfiguration</a></div><div class="ttdef"><b>Definition:</b> antAbstractConfiguration.h:19</div></div>
 <div class="ttc" id="classant_configuration_html_a4e178bdbab92eb1438b27d09a61bd2f3"><div class="ttname"><a href="classant_configuration.html#a4e178bdbab92eb1438b27d09a61bd2f3">antConfiguration::getPosition</a></div><div class="ttdeci">antVec3 getPosition()</div><div class="ttdoc">position getter </div></div>
-<div class="ttc" id="classant_configuration_html"><div class="ttname"><a href="classant_configuration.html">antConfiguration</a></div><div class="ttdef"><b>Definition:</b> antConfiguration - copie.h:21</div></div>
+<div class="ttc" id="classant_configuration_html_ac0a72cfaf4f48ee1671d917d12e5a686"><div class="ttname"><a href="classant_configuration.html#ac0a72cfaf4f48ee1671d917d12e5a686">antConfiguration::getWorldToOriginMatrix</a></div><div class="ttdeci">virtual antMat4 getWorldToOriginMatrix()</div><div class="ttdoc">inverse transform and rotate, then scale identity matrix </div></div>
+<div class="ttc" id="classant_configuration_html"><div class="ttname"><a href="classant_configuration.html">antConfiguration</a></div><div class="ttdef"><b>Definition:</b> antConfiguration.h:20</div></div>
 <div class="ttc" id="classant_configuration_html_a88f393f030510d9893a7488c73332854"><div class="ttname"><a href="classant_configuration.html#a88f393f030510d9893a7488c73332854">antConfiguration::getRotation</a></div><div class="ttdeci">antQuat getRotation()</div><div class="ttdoc">rotation getter </div></div>
-<div class="ttc" id="classant_configuration_html_a8d015790427644c17332993c8f63ae94"><div class="ttname"><a href="classant_configuration.html#a8d015790427644c17332993c8f63ae94">antConfiguration::setScale</a></div><div class="ttdeci">void setScale(float scale)</div><div class="ttdoc">scale setter </div></div>
-<div class="ttc" id="classant_configuration_html_ae1addd09ae683a014f37492aab019926"><div class="ttname"><a href="classant_configuration.html#ae1addd09ae683a014f37492aab019926">antConfiguration::m_scale</a></div><div class="ttdeci">float m_scale</div><div class="ttdef"><b>Definition:</b> antConfiguration.h:154</div></div>
-<div class="ttc" id="classant_configuration_html_a28c3552db786edeb70dc223f3cc5b3e6"><div class="ttname"><a href="classant_configuration.html#a28c3552db786edeb70dc223f3cc5b3e6">antConfiguration::setType</a></div><div class="ttdeci">void setType(antRotationType type)</div><div class="ttdoc">type setter </div></div>
+<div class="ttc" id="classant_configuration_html_ae1addd09ae683a014f37492aab019926"><div class="ttname"><a href="classant_configuration.html#ae1addd09ae683a014f37492aab019926">antConfiguration::m_scale</a></div><div class="ttdeci">float m_scale</div><div class="ttdef"><b>Definition:</b> antConfiguration.h:131</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2014 11:44:28 for AntGraphics by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 9 2014 13:28:52 for AntGraphics by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

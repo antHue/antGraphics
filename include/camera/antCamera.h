@@ -16,6 +16,8 @@
 #include <math.h>
 #include "antTypes.h"
 #include "antConfiguration.h"
+#include "antMapableConfiguration.h"
+#include "antConfigurable.h"
 
 class antCamera;
 typedef std::shared_ptr<antCamera> antCameraShPtr;
@@ -23,16 +25,25 @@ typedef std::weak_ptr<antCamera> antCameraWkPtr;
 
 typedef enum { FPS = 0, LOOKAT = 1 } antCameraType;
 
-class antCamera
+class antCamera : public antConfigurable
 {
     public :
     
     mat4 getViewMatrix();
     mat4 getProjMatrix();
     
-    void setPosition( antVec3 position );
-    void setRotation( antQuat rotation );
-    void setConfigType( bool type );
+//    void setPosition( antVec3 position );
+//    
+//    void makeMapableConfiguration();
+//    
+//    antMapableVec3 getMapablePosition();
+//    antMapableQuat getMapableRotation();
+//    antMapableVec4 getMapableTwRotation();
+//    antMapableFloat getMapableScale();
+//    antMapableRotType getMapableRotType();
+//    
+//    void setRotation( antQuat rotation );
+//    void setConfigType( bool type );
 
     static antCameraShPtr create();
     ~antCamera();
@@ -51,7 +62,7 @@ class antCamera
     /** \brief aspect ratio */
     float m_aspect_ratio;
     
-    antConfigurationShPtr m_world_configuration;
+//    antAbstractConfigurationShPtr m_world_configuration;
 
     antCamera();
     antCameraWkPtr m_weak_ptr;

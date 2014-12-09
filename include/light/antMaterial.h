@@ -12,7 +12,6 @@
 #include <memory>
 #include "antTypes.h"
 
-
 class antMaterial;
 typedef std::shared_ptr<antMaterial> antMaterialShPtr;
 typedef std::weak_ptr<antMaterial> antMaterialWkPtr;
@@ -31,9 +30,9 @@ class antMaterial
     antRGBA getAmbientReflectance();
     float getSpecularPower();
     
-    void setSpecularReflectance( const antRGBA & value );
-    void setDiffuseReflectance( const antRGBA & value );
-    void setAmbientReflectance( const antRGBA & value );
+    void setSpecularReflectance( const antRGBA & ks );
+    void setDiffuseReflectance( const antRGBA & kd );
+    void setAmbientReflectance( const antRGBA & ka );
     void setSpecularPower( float value );
     
     private :

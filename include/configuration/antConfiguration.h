@@ -11,133 +11,93 @@
 
 #include <memory>
 #include "antTypes.h"
+#include "antAbstractConfiguration.h"
 
 class antConfiguration;
 typedef std::shared_ptr<antConfiguration> antConfigurationShPtr;
 typedef std::weak_ptr<antConfiguration> antConfigurationWkPtr;
 
-typedef enum { SELF = 0, ORBIT = 1 } antRotationType;
-
-class antConfiguration
+class antConfiguration : public antAbstractConfiguration
 {
     public :
     
     //--------------------------------------------------------------------------
-    /** create
+    /**
      \brief static method to create an antConfiguration shared pointer
-     
-     \param type        SELF (default) or ORBIT
-     
+     \param type SELF (default) or ORBIT
      \return an antConfiguration shared pointer
      */
     static antConfigurationShPtr create( antRotationType type = SELF );
-    
-    
+        
     //--------------------------------------------------------------------------
-    /** create
-     \brief static method to create an antConfiguration shared pointer
-     
-     \param position    position vector
-     \param type        SELF (default) or ORBIT
-     
-     \return an antConfiguration shared pointer
-     */
-    static antConfigurationShPtr create
-    ( const antVec3 & position, antRotationType type = SELF );
-    
-    
-    //--------------------------------------------------------------------------
-    /** create
-     \brief static method to create an antConfiguration shared pointer
-     
-     \param position    position vector
-     \param rotation    rotation versor
-     \param type        SELF (default) or ORBIT
-     
-     \return an antConfiguration shared pointer
-     */
-    static antConfigurationShPtr create
-    ( const antVec3 & position, const antQuat & rotation, antRotationType type = SELF );
-    
-
-    //--------------------------------------------------------------------------
-    /** ~antConfiguration
-     \brief destructor
-     */
-    ~antConfiguration();
-    
-
-    //--------------------------------------------------------------------------
-    /** setPosition
-     \brief position setter
-     
-     \param position position vector
-     */
-    void setPosition( antVec3 position );
-    
-    
-    //--------------------------------------------------------------------------
-    /** setRotation
-     \brief rotation setter
-     
-     \param rotation rotation versor
-     */
-    void setRotation( antQuat rotation );
-    
-    
-    //--------------------------------------------------------------------------
-    /** setScale
-     \brief scale setter
-     
-     \param scale scale factor
-     */
-    void setScale( float scale );
-
-    
-    //--------------------------------------------------------------------------
-    /** setType
-     \brief type setter
-     
+    /**
+     \brief constructor
      \param type SELF or ORBIT
      */
-    void setType( antRotationType type );
-    
+    antConfiguration( antRotationType type );
     
     //--------------------------------------------------------------------------
-    /** getPosition
+    /**
+     \brief destructor
+     */
+    virtual ~antConfiguration();
+    
+    //--------------------------------------------------------------------------
+    /**
+     \copydoc antAbstractConfiguration::setPosition( antVec3 position )
+     */
+    virtual void setPosition( antVec3 position );
+    
+    //--------------------------------------------------------------------------
+    /**
+     \copydoc antAbstractConfiguration::setRotation( antQuat rotation )
+     */
+    virtual void setRotation( antQuat rotation );
+    
+    //--------------------------------------------------------------------------
+    /**
+     \copydoc antAbstractConfiguration::setScale( float scale )
+     */
+    virtual void setScale( float scale );
+
+    //--------------------------------------------------------------------------
+    /**
+     \copydoc antAbstractConfiguration::setType( antRotationType type )
+     */
+    virtual void setType( antRotationType type );
+    
+    //--------------------------------------------------------------------------
+    /**
      \brief position getter
-     
      \return position vector
      */
     antVec3 getPosition();
     
-    
     //--------------------------------------------------------------------------
-    /** getRotation
+    /**
      \brief rotation getter
-     
      \return rotation versor
      */
     antQuat getRotation();
     
+    //--------------------------------------------------------------------------
+    /**
+     \copydoc antAbstractConfiguration::getLocalToWorldMatrix();
+     */
+    virtual antMat4 getLocalToWorldMatrix();
     
     //--------------------------------------------------------------------------
-    /** getLocalToWorldMatrix
-     \brief transform, rotate and scale identity matrix
-     
-     \return local to world matrix
+    /**
+     \copydoc antAbstractConfiguration::getWorldToOriginMatrix();
      */
-    antMat4 getLocalToWorldMatrix();
-    
+    virtual antMat4 getWorldToOriginMatrix();
     
     //--------------------------------------------------------------------------
-    /** getWorldToOriginMatrix
-     \brief inverse transform and rotate, then scale identity matrix
-     
-     \return world to origin matrix
+    /**
+     \brief make a return a mapable configuration shared pointer from this
+     \return an antAbstractConfiguration mapable implementation shared pointer
      */
-    antMat4 getWorldToOriginMatrix();
-
+    antAbstractConfigurationShPtr makeMapable();
     
     private :
     
@@ -152,36 +112,6 @@ class antConfiguration
     
     /** scale factor */
     float m_scale;
-    
-    //--------------------------------------------------------------------------
-    /** antConfiguration
-     \brief constructor
-     
-     \param type        SELF or ORBIT
-     */
-    antConfiguration( antRotationType type );
-    
-    
-    //--------------------------------------------------------------------------
-    /** antConfiguration
-     \brief constructor
-     
-     \param position    position vector
-     \param type        SELF or ORBIT
-     */
-    antConfiguration( const antVec3 & position, antRotationType type );
-    
-    
-    //--------------------------------------------------------------------------
-    /** antConfiguration
-     \brief constructor
-     
-     \param position    position vector
-     \param rotation    rotation versor
-     \param type        SELF or ORBIT
-     */
-    antConfiguration( const antVec3 & position, const antQuat & rotation, antRotationType type );
-    
 
     /** weak pointer */
     antConfigurationWkPtr m_weak_ptr;

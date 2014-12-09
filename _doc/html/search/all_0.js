@@ -1,13 +1,16 @@
 var searchData=
 [
   ['antabstractapp',['antAbstractApp',['../classant_abstract_app.html',1,'antAbstractApp'],['../classant_abstract_app.html#ac1cbc2a3609ae4cde6ed6fc41af85d96',1,'antAbstractApp::antAbstractApp()']]],
+  ['antabstractconfiguration',['antAbstractConfiguration',['../classant_abstract_configuration.html',1,'']]],
   ['antabtractprimitive',['antAbtractPrimitive',['../classant_abtract_primitive.html',1,'']]],
   ['antaxis',['antAxis',['../classant_axis.html',1,'']]],
   ['antcamera',['antCamera',['../classant_camera.html',1,'']]],
-  ['antconfiguration',['antConfiguration',['../classant_configuration.html',1,'antConfiguration'],['../classant_configuration.html#a572b780d41fcc29ba89f8f43a719f1ae',1,'antConfiguration::antConfiguration(antRotationType type)'],['../classant_configuration.html#af4644bff29f1ff3f80b4ff049d23c7ab',1,'antConfiguration::antConfiguration(const antVec3 &amp;position, antRotationType type)'],['../classant_configuration.html#a9ae6717365bbf515218de0f858eaf193',1,'antConfiguration::antConfiguration(const antVec3 &amp;position, const antQuat &amp;rotation, antRotationType type)']]],
+  ['antconfiguration',['antConfiguration',['../classant_configuration.html',1,'antConfiguration'],['../classant_configuration.html#a572b780d41fcc29ba89f8f43a719f1ae',1,'antConfiguration::antConfiguration()']]],
   ['antcube',['antCube',['../classant_cube.html',1,'']]],
   ['antdrawable',['antDrawable',['../classant_drawable.html',1,'']]],
   ['antgui',['antGui',['../classant_gui.html',1,'']]],
+  ['antmapableconfiguration',['antMapableConfiguration',['../classant_mapable_configuration.html',1,'']]],
+  ['antmapablematerial',['antMapableMaterial',['../classant_mapable_material.html',1,'']]],
   ['antmaterial',['antMaterial',['../classant_material.html',1,'']]],
   ['antmesh',['antMesh',['../classant_mesh.html',1,'']]],
   ['antmidi',['antMidi',['../classant_midi.html',1,'']]],

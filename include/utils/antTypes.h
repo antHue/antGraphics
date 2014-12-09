@@ -19,6 +19,17 @@
 #define antRGBA vec4
 #define antQuat versor
 
+typedef std::shared_ptr< antRGBA > antMapableRGBA;
+typedef std::shared_ptr< float > antMapableFloat;
+typedef std::shared_ptr< antQuat > antMapableQuat;
+typedef std::shared_ptr< antVec3 > antMapableVec3;
+typedef std::shared_ptr< antVec4 > antMapableVec4;
+
+typedef enum { SELF = 0, ORBIT = 1 } antRotationType;
+
+typedef std::shared_ptr< antRotationType > antMapableRotType;
+
+
 static antQuat TwQuat_to_antQuat( const antVec4 & tw_quat )
 {
     antQuat q;

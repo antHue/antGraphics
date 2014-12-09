@@ -17,6 +17,8 @@
 #include "antVao.h"
 #include "antTypes.h"
 #include "antConfiguration.h"
+#include "antMapableConfiguration.h"
+#include "antConfigurable.h"
 
 #include <OpenGL/gl3.h>
 
@@ -25,7 +27,7 @@ typedef std::shared_ptr<antDrawable> antDrawableShPtr;
 typedef std::weak_ptr<antDrawable> antDrawableWkPtr;
 
 
-class antDrawable
+class antDrawable : public antConfigurable
 {
     public :
     
@@ -69,7 +71,7 @@ class antDrawable
     GLfloat * m_normals;    bool m_hasNormals;    bool m_normalsEnabled;
     GLfloat * m_texcoords;  bool m_hasTexCoords;  bool m_texcoordsEnabled;
     
-    antConfigurationShPtr m_world_config;
+//    antAbstractConfigurationShPtr m_world_config;
     
     antDrawable( int nVbo, ... );
     
@@ -77,9 +79,17 @@ class antDrawable
     
     public :
     
-    void setPosition( antVec3 position );
-    void setRotation( antQuat rotation );
-    void setConfigType( bool type );
+//    void makeMapableConfiguration();
+//    
+//    antMapableVec3 getMapablePosition();
+//    antMapableQuat getMapableRotation();
+//    antMapableVec4 getMapableTwRotation();
+//    antMapableFloat getMapableScale();
+//    antMapableRotType getMapableRotType();
+//    
+//    void setPosition( antVec3 position );
+//    void setRotation( antQuat rotation );
+//    void setConfigType( bool type );
     void setScale( float scale );
     
     antMat4 getModelMatrix();

@@ -10,12 +10,13 @@
 #include <iostream>
 
 antDrawable::antDrawable( int nVbo, ... ) :
+antConfigurable(),
 m_nVertices(0),
 m_hasVertices( false ), m_hasColors( false ),
 m_hasNormals( false ),  m_hasTexCoords( false ),
 m_verticesEnabled( false ), m_colorsEnabled( false ),
 m_normalsEnabled( false ),  m_texcoordsEnabled( false )
-{    
+{
     va_list args;
     va_start( args, nVbo );
     
@@ -26,7 +27,7 @@ m_normalsEnabled( false ),  m_texcoordsEnabled( false )
     
     va_end(args);
     
-    m_world_config = antConfiguration::create();
+//    m_world_configuration = antConfiguration::create();
     
     m_vao = antVao::create();
     m_vbo = antVbo::create( nVbo );    
@@ -94,9 +95,39 @@ antDrawable::~antDrawable()
     if ( m_hasTexCoords )   { delete m_texcoords;   }
 }
 
-void antDrawable::setPosition( antVec3 position ) { m_world_config->setPosition( position ); }
-void antDrawable::setRotation( antQuat rotation ) { m_world_config->setRotation( rotation ); };
-void antDrawable::setConfigType( bool type ) { m_world_config->setType( type ? ORBIT : SELF ); };
-void antDrawable::setScale( float scale ) { m_world_config->setScale( scale ); }
+//void antDrawable::setPosition( antVec3 position ) { m_world_config->setPosition( position ); }
+//void antDrawable::setRotation( antQuat rotation ) { m_world_config->setRotation( rotation ); };
+//void antDrawable::setConfigType( bool type ) { m_world_config->setType( type ? ORBIT : SELF ); };
+void antDrawable::setScale( float scale ) { m_world_configuration->setScale( scale ); }
 
-antMat4 antDrawable::getModelMatrix() { return m_world_config->getLocalToWorldMatrix(); }
+//void antDrawable::makeMapableConfiguration()
+//{
+//    m_world_config = std::dynamic_pointer_cast<antConfiguration>( m_world_config )->makeMapable();
+//}
+//
+//antMapableVec3 antDrawable::getMapablePosition()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_config)->getMapablePosition();
+//}
+//
+//antMapableQuat antDrawable::getMapableRotation()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_config)->getMapableRotation();
+//}
+//
+//antMapableVec4 antDrawable::getMapableTwRotation()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_config)->getMapableTwRotation();
+//}
+//
+//antMapableFloat antDrawable::getMapableScale()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_config)->getMapableScale();
+//}
+//
+//antMapableRotType antDrawable::getMapableRotType()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_config)->getMapableRotType();
+//}
+
+antMat4 antDrawable::getModelMatrix() { return m_world_configuration->getLocalToWorldMatrix(); }

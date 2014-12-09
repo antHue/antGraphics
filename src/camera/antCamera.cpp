@@ -45,20 +45,50 @@ mat4 antCamera::getProjMatrix()
     return proj_mat;
 }
 
-void antCamera::setPosition( antVec3 position )
-{
-    m_world_configuration->setPosition( position );
-}
-
-void antCamera::setRotation( antQuat rotation )
-{
-    m_world_configuration->setRotation( rotation );
-}
-
-void antCamera::setConfigType( bool type )
-{
-    m_world_configuration->setType( type ? ORBIT : SELF );
-};
+//void antCamera::setPosition( antVec3 position )
+//{
+//    m_world_configuration->setPosition( position );
+//}
+//
+//void antCamera::makeMapableConfiguration()
+//{
+//    m_world_configuration = std::dynamic_pointer_cast<antConfiguration>( m_world_configuration )->makeMapable();
+//}
+//
+//antMapableVec3 antCamera::getMapablePosition()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_configuration)->getMapablePosition();
+//}
+//
+//antMapableQuat antCamera::getMapableRotation()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_configuration)->getMapableRotation();
+//}
+//
+//antMapableVec4 antCamera::getMapableTwRotation()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_configuration)->getMapableTwRotation();
+//}
+//
+//antMapableFloat antCamera::getMapableScale()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_configuration)->getMapableScale();
+//}
+//
+//antMapableRotType antCamera::getMapableRotType()
+//{
+//    return std::dynamic_pointer_cast<antMapableConfiguration>(m_world_configuration)->getMapableRotType();
+//}
+//
+//void antCamera::setRotation( antQuat rotation )
+//{
+//    m_world_configuration->setRotation( rotation );
+//}
+//
+//void antCamera::setConfigType( bool type )
+//{
+//    m_world_configuration->setType( type ? ORBIT : SELF );
+//};
 
 antCamera::~antCamera()
 {

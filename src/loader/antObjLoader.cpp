@@ -37,6 +37,7 @@ antObjLoader::antObjLoader( const std::string & file_path )
                                  aiProcess_RemoveComponent
                                 |aiProcess_GenNormals
                                 | aiProcess_CalcTangentSpace
+                                |aiProcess_PreTransformVertices
 //                                  | aiProcess_GenUVCoords
 //                                  | aiProcess_MakeLeftHanded
                                 );

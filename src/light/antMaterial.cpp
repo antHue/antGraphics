@@ -64,19 +64,19 @@ float antMaterial::getSpecularPower()
     return m_specular_power;
 }
 
-void antMaterial::setSpecularReflectance( const antRGBA & value )
+void antMaterial::setSpecularReflectance( const antRGBA & ks )
 {
-    m_ks = value;
+    m_ks = ks;
 }
 
-void antMaterial::setDiffuseReflectance( const antRGBA & value )
+void antMaterial::setDiffuseReflectance( const antRGBA & kd )
 {
-    m_kd = value;
+    m_kd = kd;
 }
 
-void antMaterial::setAmbientReflectance( const antRGBA & value )
+void antMaterial::setAmbientReflectance( const antRGBA & ka )
 {
-    m_ka = value;
+    m_ka = ka;
 }
 
 void antMaterial::setSpecularPower( float value )
