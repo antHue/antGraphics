@@ -42,79 +42,47 @@ antApp::~antApp()
 
 void antApp::start()
 {
-    m_background_color = antRGBA( 1.f, 0.5f, 0.2f, 1.f );
+    m_background_color = antRGBA( 0.18f, 0.42f, 0.655f, 1.f );
     
-    m_plane_type = false;
-    m_plane_position = antVec3( 0.f, 0.f, 0.f );
-    m_plane_tw_rotation = antQuat_to_TwQuat( quat_from_axis_rad( 1.f, 0.f, 0.f, 0.f ) );
+    //-- SPHERE ----------------------------------------------------------------
+    m_sphere_shptr = antSphere::create();
+    m_sphere_shptr->makeMapableConfiguration();
+    m_sphere_material = antMapableMaterial::create
+        ( JADE_SPECULAR, JADE_DIFFUSE, JADE_AMBIENT, JADE_SHININESS );
     
-    m_camera_type = false;
-    m_camera_position = antVec3( 0.f, 0.f, 1.f );
-    m_camera_tw_rotation = antQuat_to_TwQuat( quat_from_axis_rad( 1.f, 0.f, 0.f, 0.f ) );
-    
-    m_mesh_type = false;
-    m_mesh_position = antVec3( 0.f, 0.f, 0.f );
-    m_mesh_tw_rotation = antQuat_to_TwQuat( quat_from_axis_rad( 1.f, 0.f, 0.f, 0.f ) );
-
-    m_light_position = antVec3( 0.f, 0.f, 0.f );
-    
-    m_plane_shptr = antPlane::create( 1.f, 1.f, 10, 10, 2, true, false , false );
-    
-    m_axis_shptr = antAxis::create( 2, true );
-    
+    //-- CAMERA ----------------------------------------------------------------
     m_camera_shptr = antCamera::create();
     
-    m_mesh_shptr = antMesh::createFromObjFile
-    ( "/Users/anthonycouret/Developer/antGraphics/_models/roc.obj" );
-    m_mesh_shptr->setScale( 0.01f );
-    
-    m_skybox_shptr = antSkybox::create( "/Users/anthonycouret/Developer/antGraphics/_textures/tree/" );
-    m_skybox_shptr->setScale( 40.f );
-    
-    m_light_shptr = antPointLight::create( m_light_position );
-    m_light_sphere_shptr = antSphere::create();
-    m_light_sphere_shptr->setPosition( m_light_position );
-    m_light_sphere_shptr->setScale( 0.01f );
+    m_camera_shptr->makeMapableConfiguration();
+    m_camera_shptr->setPosition( antVec3( 0.f, 0.f, 10.f ) );
+    m_camera_shptr->setRotation( quat_from_axis_rad( 1.f, 0.f, 0.f, 0.f ) );
+    m_camera_shptr->setConfigType( false );
 
+    //-- LIGHT -----------------------------------------------------------------
+    m_light_sphere_shptr = antSphere::create();
     
-    m_gui_shptr = antGui::create( m_window_shptr );
-//    int bar_id = m_gui_shptr->addBar( "planeconfig" );
-//    m_gui_shptr->addQuatVarRW( bar_id, "rotation", &m_plane_tw_rotation );
-//    m_gui_shptr->addVec3VarRW( bar_id, "position", &m_plane_position );
-//    m_gui_shptr->addToggleRW( bar_id, "type", &m_plane_type );
+    m_light_sphere_shptr->makeMapableConfiguration();
+    m_light_sphere_shptr->setPosition( antVec3( 0.f, 0.f, 5.f ) );
+    m_light_sphere_shptr->setRotation( quat_from_axis_rad( 1.f, 0.f, 0.f, 0.f ) );
+    m_light_sphere_shptr->setConfigType( false );
+
+    m_light_material =
+    antMapableMaterial::create( LIGHT_SPECULAR, LIGHT_DIFFUSE, m_background_color, LIGHT_SHININESS );
     
-    int bar_id2 = m_gui_shptr->addBar( "cameraconfig" );
-    m_gui_shptr->addQuatVarRW( bar_id2, "rotation", &m_camera_tw_rotation );
-    m_gui_shptr->addVec3VarRW( bar_id2, "position", &m_camera_position );
-    m_gui_shptr->addToggleRW( bar_id2, "type", &m_camera_type );
-    
-    int bar_id3 = m_gui_shptr->addBar( "meshconfig" );
-    m_gui_shptr->addQuatVarRW( bar_id3, "rotation", &m_mesh_tw_rotation );
-    m_gui_shptr->addVec3VarRW( bar_id3, "position", &m_mesh_position );
-    m_gui_shptr->addToggleRW( bar_id3, "type", &m_mesh_type );
-    
-    int bar_id4 = m_gui_shptr->addBar( "lightconfig" );
-    m_gui_shptr->addVec3VarRW( bar_id4, "position", &m_light_position );
+    //-- SHADER  ------------------------------------------------------------------
+    std::string phong_vs =
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/superbible_shaders/phong/phong.vert";
+    std::string phong_fs =
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/superbible_shaders/phong/phong.frag";
+    m_phong_shader = antShader::createShaderProgram( phong_vs, phong_fs );
     
     std::string light_vs =
-    "/Users/anthonycouret/Developer/antGraphics/_shaders/simple_shaders/simple.vert";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/light_shaders/simple/simple_light.vert";
     std::string light_fs =
-    "/Users/anthonycouret/Developer/antGraphics/_shaders/simple_shaders/simple.frag";
+    "/Users/anthonycouret/Developer/antGraphics/_shaders/light_shaders/simple/simple_light.frag";
     m_light_shader = antShader::createShaderProgram( light_vs, light_fs );
     
-    std::string simple_vs =
-    "/Users/anthonycouret/Developer/antGraphics/_shaders/phong_shaders/phong.vert";
-    std::string simple_geom =
-    "/Users/anthonycouret/Developer/antGraphics/_shaders/phong_shaders/phong.geom";
-    std::string simple_fs =
-    "/Users/anthonycouret/Developer/antGraphics/_shaders/phong_shaders/phong.frag";
-    m_simple_shader = antShader::createShaderProgram( simple_vs, simple_fs );
-    
-    std::string skybox_vs =
-    "/Users/anthonycouret/Developer/antGraphics/_shaders/skybox_shaders/skybox.vert";
-    std::string skybox_fs =
-    "/Users/anthonycouret/Developer/antGraphics/_shaders/skybox_shaders/skybox.frag";
-    m_skybox_shader = antShader::createShaderProgram( skybox_vs, skybox_fs );
+    makeGui();
 }
 
 
@@ -124,20 +92,10 @@ void antApp::start()
 
 void antApp::update()
 {
-    m_plane_shptr->setPosition( m_plane_position );
-    m_plane_shptr->setRotation( TwQuat_to_antQuat( m_plane_tw_rotation ) );
-    m_plane_shptr->setConfigType( m_plane_type );
+    antVec4 l = m_light_sphere_shptr->getModelMatrix() * antVec4(0.f, 0.f, 0.f, 1.f);
+    m_light_pos = antVec3( l.v[0], l.v[1], l.v[2] );
     
-    m_camera_shptr->setPosition( m_camera_position );
-    m_camera_shptr->setRotation( TwQuat_to_antQuat( m_camera_tw_rotation ) );
-    m_camera_shptr->setConfigType( m_camera_type );
-    
-    m_mesh_shptr->setPosition( m_mesh_position );
-    m_mesh_shptr->setRotation( TwQuat_to_antQuat( m_mesh_tw_rotation ) );
-    m_mesh_shptr->setConfigType( m_mesh_type );
-    
-    m_light_shptr->setPosition( m_light_position );
-    m_light_sphere_shptr->setPosition( m_light_position );
+    m_camera_shptr->getMapablePosition()->v[0] = sinf( getCurrentTime() );
 }
 
 void antApp::draw()
@@ -145,9 +103,7 @@ void antApp::draw()
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     glClearBufferfv( GL_COLOR, 0, m_background_color.v );
     
-    glActiveTexture( GL_TEXTURE0 );
-    
-    
+    //-- LIGHT -----------------------------------------------------------------
     glUseProgram( m_light_shader );
     
     glUniformMatrix4fv( glGetUniformLocation( m_light_shader, "u_view_mat" ),
@@ -162,60 +118,54 @@ void antApp::draw()
 
     m_light_sphere_shptr->draw( GL_TRIANGLES );
     
-    glUseProgram( m_simple_shader );
     
-//    glUniformMatrix4fv( glGetUniformLocation( m_simple_shader, "u_model_mat" ),
-//                       1, GL_FALSE, m_plane_shptr->getModelMatrix().m );
+    //-- SPHERES ---------------------------------------------------------------
+    glUseProgram( m_phong_shader );
     
-    glUniformMatrix4fv( glGetUniformLocation( m_simple_shader, "u_view_mat" ),
+    glUniformMatrix4fv( glGetUniformLocation( m_phong_shader, "u_view_mat" ),
                        1, GL_FALSE, m_camera_shptr->getViewMatrix().m );
     
-    glUniformMatrix4fv( glGetUniformLocation( m_simple_shader, "u_proj_mat" ),
+    glUniformMatrix4fv( glGetUniformLocation( m_phong_shader, "u_proj_mat" ),
                        1, GL_FALSE, m_camera_shptr->getProjMatrix().m );
     
-    //m_plane_shptr->draw();
-    
-    
-    glUniformMatrix4fv( glGetUniformLocation( m_simple_shader, "u_model_mat" ),
-                       1, GL_FALSE, m_mesh_shptr->getModelMatrix().m );
-    
-    glUniform3fv( glGetUniformLocation( m_simple_shader, "u_point_light_pos"), 1,
-                 m_light_shptr->getPosition().v );
-    
-    glUniform4fv( glGetUniformLocation( m_simple_shader, "u_ls"), 1,
-                 m_light_shptr->getSpecularColor().v );
-    
-    glUniform1i ( glGetUniformLocation( m_simple_shader, "u_env_tex" ), 0);
 
-    
-    glUniform1f( glGetUniformLocation( m_simple_shader, "u_specular_power"), 5.f );
-    
-//    glUniform1f( glGetUniformLocation( m_simple_shader, "u_rot" ), cosf(getCurrentTime()) );
-//    glUniform1f( glGetUniformLocation( m_simple_shader, "u_x_axis" ), -cosf(getCurrentTime()) );
-//    glUniform1f( glGetUniformLocation( m_simple_shader, "u_y_axis" ), -sinf(getCurrentTime()) );
-//    glUniform1f( glGetUniformLocation( m_simple_shader, "u_z_axis" ), sinf(getCurrentTime()) );
-//    
-//    glUniform1f( glGetUniformLocation( m_simple_shader, "u_z_axis" ), sinf(getCurrentTime()) );
 
+    glUniform3fv( glGetUniformLocation( m_phong_shader, "u_light_pos" ), 1,
+                 m_light_pos.v );
     
-    m_mesh_shptr->draw( GL_TRIANGLES );
-    //m_axis_shptr->draw();
+    glUniform4fv( glGetUniformLocation( m_phong_shader, "u_la" ), 1,
+                 m_light_material->getAmbientReflectance()->v );
     
-    glUseProgram( m_skybox_shader );
+    glUniform4fv( glGetUniformLocation( m_phong_shader, "u_ls" ), 1,
+                 m_light_material->getSpecularReflectance()->v );
     
-    glUniform1i ( glGetUniformLocation( m_skybox_shader, "u_texture" ), 0);
+    glUniform4fv( glGetUniformLocation( m_phong_shader, "u_ld" ), 1,
+                 m_light_material->getDiffuseReflectance()->v );
     
-    glUniformMatrix4fv( glGetUniformLocation( m_skybox_shader, "u_model_mat" ),
-                       1, GL_FALSE, m_skybox_shptr->getModelMatrix().m );
+    glUniform4fv( glGetUniformLocation( m_phong_shader, "u_ks" ), 1,
+                 /*m_ks.v*/
+                 m_sphere_material->getSpecularReflectance()->v );
     
-    glUniformMatrix4fv( glGetUniformLocation( m_skybox_shader, "u_view_mat" ),
-                       1, GL_FALSE, m_camera_shptr->getViewMatrix().m );
+    glUniform4fv( glGetUniformLocation( m_phong_shader, "u_ka" ), 1,
+                 m_sphere_material->getAmbientReflectance()->v  );
     
-    glUniformMatrix4fv( glGetUniformLocation( m_skybox_shader, "u_proj_mat" ),
-                       1, GL_FALSE, m_camera_shptr->getProjMatrix().m );
+    glUniform4fv( glGetUniformLocation( m_phong_shader, "u_kd" ), 1,
+                 m_sphere_material->getDiffuseReflectance()->v  );
     
-    m_skybox_shptr->draw();
+    glUniform1f( glGetUniformLocation( m_phong_shader, "u_specular_power" ),
+                *(m_sphere_material->getSpecularPower().get()) );
     
+    for ( int i = -2 ; i <= 2; i ++)
+    {
+        for ( int j = -2; j <= 2; j ++)
+        {
+            m_sphere_shptr->setPosition( antVec3( i * 2, j * 2, 0.f ) );
+            glUniformMatrix4fv( glGetUniformLocation( m_phong_shader, "u_model_mat" ),
+                               1, GL_FALSE, m_sphere_shptr->getModelMatrix().m );
+            m_sphere_shptr->draw( GL_TRIANGLES );
+            
+        }
+    }
     
     m_gui_shptr->draw();
 }
@@ -225,3 +175,39 @@ void antApp::draw()
 //------------------------------------------------------------------------------
 
 void antApp::shutdown() {}
+
+
+
+
+void antApp::makeGui()
+{
+    //-- GUI  ------------------------------------------------------------------
+    m_gui_shptr = antGui::create( m_window_shptr );
+    
+    int bar_id1 = m_gui_shptr->addBar( "spheresconfig" );
+    m_gui_shptr->addRGBAVarRW( bar_id1, "specular", m_sphere_material->getSpecularReflectance().get() );
+    m_gui_shptr->addRGBAVarRW( bar_id1, "diffuse", m_sphere_material->getDiffuseReflectance().get() );
+    m_gui_shptr->addRGBAVarRW( bar_id1, "ambient", m_sphere_material->getAmbientReflectance().get() );
+    m_gui_shptr->addFloatVarRW( bar_id1, "specpower", m_sphere_material->getSpecularPower().get() );
+    m_gui_shptr->addVec3VarRW( bar_id1, "position", m_sphere_shptr->getMapablePosition().get() );
+    m_gui_shptr->addQuatVarRW( bar_id1, "rotation", m_sphere_shptr->getMapableTwRotation().get() );
+    m_gui_shptr->addFloatVarRW( bar_id1, "scale", m_sphere_shptr->getMapableScale().get() );
+
+    
+    int bar_id2 = m_gui_shptr->addBar( "cameraconfig" );
+    m_gui_shptr->addVec3VarRW( bar_id2, "position", m_camera_shptr->getMapablePosition().get() );
+    m_gui_shptr->addQuatVarRW( bar_id2, "rotation", m_camera_shptr->getMapableTwRotation().get() );
+    //m_gui_shptr->addRotTypeRW( bar_id2, "type", m_camera_shptr->getMapableRotType().get() );
+    //m_gui_shptr->addFloatVarRW( bar_id2, "scale", m_camera_shptr->getMapableScale().get() );
+
+    
+    int bar_id4 = m_gui_shptr->addBar( "lightconfig" );
+    m_gui_shptr->addVec3VarRW( bar_id4, "position", m_light_sphere_shptr->getMapablePosition().get() );
+    m_gui_shptr->addQuatVarRW( bar_id4, "rotation", m_light_sphere_shptr->getMapableTwRotation().get() );
+    //m_gui_shptr->addRotTypeRW( bar_id2, "type", m_camera_shptr->getMapableRotType().get() );
+    m_gui_shptr->addFloatVarRW( bar_id4, "scale", m_light_sphere_shptr->getMapableScale().get() );
+    
+    m_gui_shptr->addRGBAVarRW( bar_id4, "specular", m_light_material->getSpecularReflectance().get() );
+    m_gui_shptr->addRGBAVarRW( bar_id4, "diffuse", m_light_material->getDiffuseReflectance().get() );
+    m_gui_shptr->addRGBAVarRW( bar_id4, "ambient", m_light_material->getAmbientReflectance().get() );
+}

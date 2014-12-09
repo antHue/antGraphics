@@ -16,15 +16,18 @@
 #include "antTypes.h"
 #include "antAbstractApp.h"
 
-#include "antPlane.h"
 #include "antShader.h"
 #include "antGui.h"
 #include "antCamera.h"
 #include "antMesh.h"
-#include "antAxis.h"
 #include "antSkybox.h"
 #include "antPointLight.h"
 #include "antSphere.h"
+#include "antMapableMaterial.h"
+#include "antMaterialDef.h"
+
+#include "antMapableConfiguration.h"
+#include "antConfiguration.h"
 
 class antApp;
 typedef std::shared_ptr<antApp> antAppShPtr;
@@ -44,40 +47,29 @@ class antApp : public antAbstractApp
     virtual void draw();
     virtual void shutdown();
     
+    void makeGui();
+    
     private :
     
     antRGBA m_background_color;
     
-    GLuint m_simple_shader;
-    GLuint m_skybox_shader;
+    //-- SPHERES ---------------------------------------------------------------
+    antSphereShPtr m_sphere_shptr;
+    antMapableMaterialShPtr m_sphere_material;
+    
+    //-- SHADERS ---------------------------------------------------------------
+    GLuint m_phong_shader;
     GLuint m_light_shader;
     
-    antPlaneShPtr m_plane_shptr;
+    //-- CAMERA ----------------------------------------------------------------
+    antCameraShPtr m_camera_shptr;    
     
-    antCameraShPtr m_camera_shptr;
-    
-    antMeshShPtr m_mesh_shptr;
-    antAxisShPtr m_axis_shptr;
-
-    antSkyboxShPtr m_skybox_shptr;
-
-    antPointLightShPtr m_light_shptr;
+    //-- LIGHT -----------------------------------------------------------------
     antSphereShPtr m_light_sphere_shptr;
-    
-    bool m_plane_type;
-    antVec4 m_plane_tw_rotation;
-    antVec3 m_plane_position;
-    
-    bool m_camera_type;
-    antVec4 m_camera_tw_rotation;
-    antVec3 m_camera_position;
-    
-    bool m_mesh_type;
-    antVec4 m_mesh_tw_rotation;
-    antVec3 m_mesh_position;
-    
-    antVec3 m_light_position;
-    
+    antMapableMaterialShPtr m_light_material;
+    antVec3 m_light_pos;
+
+    //-- GUI  ------------------------------------------------------------------
     antGuiShPtr m_gui_shptr;
     
     antApp( int window_width, int window_height, const std::string & window_title );
